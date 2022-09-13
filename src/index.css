@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    @apply scroll-smooth;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    @apply box-border bg-gray-900 text-gray-100;
+}
+
+.btn-primary {
+    @apply bg-cyan-600 font-semibold text-white rounded-full py-3 px-6 flex items-center gap-2;
+}
+
+.btn-primary {
+    @layer md: mx-auto
+}
+
+.aboutImg::after {
+    @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-white;
+}
+
+input,
+textarea {
+    @apply bg-gray-700 outline-none rounded-lg p-3;
+}
+
+::placeholder {
+    @apply text-lg;
+}
+
+::selection {
+    @apply bg-cyan-600;
+}
