@@ -1,7 +1,8 @@
 import hero from '../assets/hero.png'
+import { LogosGitlab } from './techs/Github'
+import { LogosLinkedinIcon } from './techs/Linkedin'
 
 export const Hero = () => {
-  const socialMedia = ['logo-instagram', 'logo-facebook', 'logo-linkedin', 'logo-twitter']
   return (
     <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
       <div className="flex-1 flex items-center justify-center h-full">
@@ -14,18 +15,19 @@ export const Hero = () => {
               Hello!
               <br />
             </span>
-            My Name is <span>John Alex</span>
+            My Name is <span>Dimitris Georgiadis</span>
           </h1>
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
-            Fullstack Developer
+            Junior Fullstack Developer
           </h4>
           <button className="btn-primary mt-8">Contact Me</button>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-            {socialMedia?.map(icon => (
-              <div key={icon} className="text-gray-600 hover:text-white cursor-pointer ">
-                <ion-icon name={icon}></ion-icon>
-              </div>
-            ))}
+            <div className="text-gray-600 hover:text-white cursor-pointer ">
+              <LogosGitlab />
+            </div>
+            <div className="text-gray-600 hover:text-white cursor-pointer ">
+              <LogosLinkedinIcon />
+            </div>
           </div>
         </div>
       </div>

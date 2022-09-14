@@ -2,9 +2,15 @@ import aboutImg from '../assets/about.png'
 
 export const About = () => {
   const info = [
-    { text: 'Years experience', count: '04' },
-    { text: 'Completed Projects', count: '24' },
-    { text: 'Companies Work', count: '06' }
+    { text: 'Years experience', count: '1.5' },
+    { text: 'Completed Projects', count: '15' },
+    { text: 'Companies Work', count: '2' }
+  ]
+
+  const aboutMe = [
+    {
+      text: "Hi i'm a Jim, Junior Full Stack Developer, i have bachelor degree in computer science. I mainly work with MEVN Stack (MongoDB / MySQL, ExpressJS, VueJS, NodeJS) with TypeScript but i'am familiar with other languages and frameworks like PHP & Laravel. If you want check out my projects on GitHub. My goal is to become a good developer with active role. Also don't forget to check out my resume."
+    }
   ]
   return (
     <section id="about" className="py-10 text-white">
@@ -16,12 +22,11 @@ export const About = () => {
         <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
           <div className="p-2">
             <div className="text-gray-300 my-3">
-              <p className="text-justify leading-7 w-11/12 mx-auto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eos, quam vel
-                quisquam, explicabo sit labore dignissimos optio ratione quibusdam doloribus
-                pariatur consequuntur sint. Reprehenderit cupiditate possimus facere quasi
-                voluptatem?
-              </p>
+              {aboutMe.map(content => (
+                <p key={content} className="text-justify leading-7 w-11/12 mx-auto">
+                  {content.text}
+                </p>
+              ))}
               <div className="flex mt-10 items-center gap-7">
                 {info.map(content => (
                   <div key={content.text}>
@@ -35,7 +40,10 @@ export const About = () => {
               </div>
               <br />
               <br />
-              <a href="./src/assets/Code_a_program.pdf" download>
+              <a
+                target={'_blank'}
+                href="https://www.canva.com/design/DAEsOtedHcw/9nOcuUvuW3ZdK1oig9q1Xg/view?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
+                rel="noreferrer">
                 <button className="btn-primary">Download CV</button>
               </a>
             </div>
