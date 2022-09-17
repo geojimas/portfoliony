@@ -15,7 +15,7 @@ export const Contact = () => {
         </h3>
         <p className="text-gray-400 mt-3 text-lg">Get in touch</p>
 
-        <div
+        {/* <div
           className="mt-16 flex md:flex-row flex-col
          gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto">
           <form className="flex flex-col flex-1 gap-5">
@@ -36,6 +36,28 @@ export const Contact = () => {
                 <p className="md:text-base text-sm  break-words">{contact.text}</p>
               </div>
             ))}
+          </div>
+        </div> */}
+        <div className="container flex flex-col max-w-2xl p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
+          <div className="flex flex-wrap justify-between p-4 border-4 rounded-3xl">
+            <div className="flex space-x-4">
+              <div>
+                <img
+                  src="https://api.iconify.design/emojione-v1:boy.svg"
+                  alt=""
+                  className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
+                />
+              </div>
+              <div>
+                <h4 className="font-bold">Dimitris Georgiadis</h4>
+                <span className="text-xs dark:text-gray-400">🟢 Active now</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="p-4 space-y-2">
+                <p className="lg:text-xl md:text-xs font-bold text-white tracking-wider">georgiadis8636@gmail.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

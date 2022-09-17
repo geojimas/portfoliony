@@ -4,6 +4,8 @@ import { LogosTailwindcssIcon } from './techs/Tailwind'
 import { LogosTypescriptIcon } from './techs/TypeScript'
 import { LogosJavascript } from './techs/Javascript'
 import { LogosNodejsIcon } from './techs/Node'
+import { LogosGitIcon } from './techs/Git'
+import { LogosReact } from './techs/React'
 
 export const Skills = () => {
   return (
@@ -17,21 +19,7 @@ export const Skills = () => {
           <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
             <div className="w-18 h-16 flex items-center justify-center rounded-full">
               <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
-                <LogosVue />
-              </div>
-            </div>
-          </div>
-          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
-            <div className="w-18 h-16 flex items-center justify-center rounded-full">
-              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
-                <LogosLaravel />
-              </div>
-            </div>
-          </div>
-          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
-            <div className="w-18 h-16 flex items-center justify-center rounded-full">
-              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
-                <LogosTailwindcssIcon />
+                <LogosJavascript />
               </div>
             </div>
           </div>
@@ -45,7 +33,21 @@ export const Skills = () => {
           <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
             <div className="w-18 h-16 flex items-center justify-center rounded-full">
               <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
-                <LogosJavascript />
+                <LogosVue />
+              </div>
+            </div>
+          </div>
+          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
+            <div className="w-18 h-16 flex items-center justify-center rounded-full">
+              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
+                <LogosReact />
+              </div>
+            </div>
+          </div>
+          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
+            <div className="w-18 h-16 flex items-center justify-center rounded-full">
+              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
+                <LogosTailwindcssIcon />
               </div>
             </div>
           </div>
@@ -53,6 +55,20 @@ export const Skills = () => {
             <div className="w-18 h-16 flex items-center justify-center rounded-full">
               <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
                 <LogosNodejsIcon />
+              </div>
+            </div>
+          </div>
+          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
+            <div className="w-18 h-16 flex items-center justify-center rounded-full">
+              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
+                <LogosLaravel />
+              </div>
+            </div>
+          </div>
+          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl">
+            <div className="w-18 h-16 flex items-center justify-center rounded-full">
+              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
+                <LogosGitIcon />
               </div>
             </div>
           </div>

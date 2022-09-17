@@ -1,4 +1,4 @@
-import hero from '../assets/hero.png'
+import hero from '../assets/me.jpg'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 
@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
       <div className="flex-1 flex items-center justify-center h-full">
-        <img src={hero} alt="" className="md:w-11/12 h-full object-cover" />
+        <img src={hero} alt="" className="sm:max-w-xs h-full object-cover rounded-full" />
       </div>
       <div className="flex-1">
         <div className="md:text-left text-center">
@@ -17,15 +17,14 @@ export const Hero = () => {
             </span>
             My Name is <span>Dimitris Georgiadis</span>
           </h1>
-          <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
+          <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-white">
             Junior Fullstack Developer
           </h4>
-          <button className="btn-primary mt-8">Contact Me</button>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-            <div className="text-gray-600 hover:text-white cursor-pointer ">
+            <div className="hover:scale-125 cursor-pointer ">
               <LogosGitlab />
             </div>
-            <div className="text-gray-600 hover:text-white cursor-pointer ">
+            <div className="hover:scale-125 cursor-pointer ">
               <LogosLinkedinIcon />
             </div>
           </div>
