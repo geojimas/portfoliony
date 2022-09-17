@@ -21,12 +21,20 @@ export const Hero = () => {
             Junior Fullstack Developer
           </h4>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-            <div className="hover:scale-125 cursor-pointer ">
+            <a
+              href="https://github.com/geojimas"
+              target={'_blank'}
+              className="hover:scale-125 cursor-pointer "
+              rel="noreferrer">
               <LogosGitlab />
-            </div>
-            <div className="hover:scale-125 cursor-pointer ">
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa"
+              target={'_blank'}
+              className="hover:scale-125 cursor-pointer "
+              rel="noreferrer">
               <LogosLinkedinIcon />
-            </div>
+            </a>
           </div>
         </div>
       </div>
