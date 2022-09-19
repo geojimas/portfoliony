@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { MaterialSymbolsMenu } from '../components/techs/BurgerMenu'
 
 export const Navbar = () => {
   const [sticky, setSticky] = useState(false)
@@ -41,8 +42,8 @@ export const Navbar = () => {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-[999]  ${open ? 'text-gray-900' : 'text-gray-100'} text-3xl md:hidden m-5`}>
-          <ion-icon name="menu"></ion-icon>
+          className={`z-[999]  ${sticky ? 'text-gray-900' : 'text-gray-100'} text-3xl md:hidden m-5`}>
+          <MaterialSymbolsMenu />
         </div>
         <div
           className={`md:hidden text-gray-900 absolute w-2/3 h-screen
