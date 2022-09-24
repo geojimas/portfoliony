@@ -1,7 +1,7 @@
 export const About = () => {
   const info = [
     { text: 'Years experience', count: '1.5' },
-    { text: 'Completed Projects', count: '15' },
+    { text: 'Completed Projects', count: '10' },
     { text: 'Companies Work', count: '2' }
   ]
 
@@ -11,7 +11,7 @@ export const About = () => {
     }
   ]
   return (
-    <section id="about" className="py-10 text-white">
+    <section id="about" className="py-16 text-white">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">
           About <span className="text-cyan-600">Me</span>
@@ -38,16 +38,11 @@ export const About = () => {
               </div>
               <br />
               <br />
-              {/* <a
-                target={'_blank'}
-                href="https://www.canva.com/design/DAEsOtedHcw/9nOcuUvuW3ZdK1oig9q1Xg/view?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
-                rel="noreferrer">
-                <button className="btn-primary">Download CV</button>
-              </a> */}
+              <div className="flex justify-start">
               <a
                 target={'_blank'}
                 href="https://www.canva.com/design/DAEsOtedHcw/9nOcuUvuW3ZdK1oig9q1Xg/view?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
-                className="relative inline-flex items-center px-8 py-3 overflow-hidden text-WHITE border rounded border-current group focus:outline-none focus:ring"
+                className="relative inline-flex items-center px-8 py-3 overflow-hidden text-WHITE border-2 rounded border-current group focus:outline-none focus:ring"
                 rel="noreferrer">
                 <span className="absolute right-0 transition-transform translate-x-full group-hover:-translate-x-4">
                   <img src="https://api.iconify.design/emojione-v1:right-arrow.svg" alt="arrow" />
@@ -57,6 +52,7 @@ export const About = () => {
                   Download CV
                 </span>
               </a>
+              </div>
             </div>
           </div>
           <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">

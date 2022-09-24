@@ -7,7 +7,7 @@ import project5 from '../assets/lot.png'
 import project6 from '../assets/rng.png'
 import project7 from '../assets/auth.png'
 import project8 from '../assets/lmn.png'
-import projectPerson from '../assets/profile.jpg'
+
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper'
@@ -63,7 +63,7 @@ export const Project = () => {
     }
   ]
   return (
-    <section id="projects" className="py-10 text-white">
+    <section id="projects" className="py-16 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
           My <span className="text-cyan-600">Projects</span>
