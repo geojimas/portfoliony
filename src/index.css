@@ -5,6 +5,7 @@
 
 html {
     @apply scroll-smooth;
+    scroll-padding: 5vmax;
     font-family: 'Quicksand', sans-serif;
 }
 
