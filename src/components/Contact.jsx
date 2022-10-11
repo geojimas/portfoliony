@@ -38,7 +38,7 @@ export const Contact = () => {
             ))}
           </div>
         </div> */}
-        <div className="container flex flex-col max-w-2xl p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
+        <div className="container flex flex-col max-w-2xl p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100 hover:scale-105">
           <div className="flex flex-wrap justify-between p-4 border-4 rounded-3xl">
             <div className="flex space-x-4">
               <div>

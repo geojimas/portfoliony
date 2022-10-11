@@ -98,14 +98,14 @@ export const Project = () => {
                     <a
                       href={project.github_link}
                       target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block hover:scale-105 cursor-pointer rounded-md"
                       rel="noreferrer">
                       Github
                     </a>
                     <a
                       href={project.live_link}
                       target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block hover:scale-105 cursor-pointer rounded-md"
                       rel="noreferrer">
                       Live Demo
                     </a>
