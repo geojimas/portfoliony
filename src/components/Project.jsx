@@ -54,7 +54,7 @@ export const Project = () => {
       img: project7,
       name: 'JWT Authentication',
       github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
-      live_link: 'https://climax245.herokuapp.com'
+      live_link: 'https://climax245.up.railway.app'
     },
     {
       img: project8,

@@ -42,7 +42,9 @@ export const Navbar = () => {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-[999]  ${sticky ? 'text-gray-900' : 'text-gray-100'} text-3xl md:hidden m-5`}>
+          className={`z-[999]  ${
+            sticky ? 'text-gray-900' : 'text-gray-100'
+          } text-3xl md:hidden m-5`}>
           <MaterialSymbolsMenu />
         </div>
         <div
