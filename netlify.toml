@@ -5,7 +5,7 @@ NODE_VERSION = "16"
 
 [build]
 publish = "dist"
-command = "npm install && npm run build"
+command = "yarn install && yarn run build"
 
 [[redirects]]
 from = "/*"
