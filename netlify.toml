@@ -11,8 +11,3 @@ command = "npm install && npm run build"
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[headers]]
-for = "/manifest.webmanifest"
-[headers.values]
-Content-Type = "application/manifest+json"
