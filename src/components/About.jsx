@@ -42,7 +42,7 @@ export const About = () => {
                 <a
                   target={'_blank'}
                   href="https://www.canva.com/design/DAEsOtedHcw/9nOcuUvuW3ZdK1oig9q1Xg/view?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
-                  className="relative animate-fade inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none focus:ring"
+                  className="relative inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none focus:ring hover:bg-red-800 hover:shadow-lg hover:shadow-blue-600/70"
                   rel="noreferrer">
                   <span className="absolute right-0 transition-transform translate-x-full group-hover:-translate-x-4">
                     <img src="https://api.iconify.design/emojione-v1:right-arrow.svg" alt="arrow" />
@@ -53,7 +53,7 @@ export const About = () => {
                 <a
                   target={'_blank'}
                   href="https://drive.google.com/file/d/13N0k6XVarBfqA3k8o_JjjbdBzSZuB7Hs/view?usp=share_link"
-                  className="relative inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none focus:ring ml-10"
+                  className="relative inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none focus:ring ml-10 hover:bg-red-800 hover:shadow-lg hover:shadow-blue-600/70"
                   rel="noreferrer">
                   <span className="absolute right-0 transition-transform translate-x-full group-hover:-translate-x-4">
                     <img src="https://api.iconify.design/emojione-v1:right-arrow.svg" alt="arrow" />
