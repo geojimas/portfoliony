@@ -6,6 +6,7 @@ import { LogosJavascript } from './techs/Javascript'
 import { LogosNodejsIcon } from './techs/Node'
 import { LogosGitIcon } from './techs/Git'
 import { LogosReact } from './techs/React'
+import { LogosVitejs } from './techs/Vite'
 
 export const Skills = () => {
   return (
@@ -34,6 +35,13 @@ export const Skills = () => {
             <div className="w-18 h-16 flex items-center justify-center rounded-full">
               <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
                 <LogosVue />
+              </div>
+            </div>
+          </div>
+          <div className="border-2 group border-cyan-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-blue-600/70">
+            <div className="w-18 h-16 flex items-center justify-center rounded-full">
+              <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center group-hover:text-cyan-600">
+                <LogosVitejs />
               </div>
             </div>
           </div>

@@ -29,9 +29,13 @@ export const Navbar = () => {
           </h4>
         </div>
         <div
-          className={` ${
-            sticky ? 'md:bg-white/0 bg-white' : 'bg-white'
-          } text-gray-900 md:block hidden px-7 py-2 font-medium  rounded-bl-full`}>
+          className={`${
+            sticky ? 'md:bg-white/0 bg-white' : 'bg-white/90'
+          } text-gray-900 md:block hidden px-7 py-2 font-medium rounded-bl-full`}
+          style={{
+            backgroundColor: sticky ? 'white' : 'transparent',
+            transition: 'background-color 500ms ease-in-out'
+          }}>
           <ul className="flex items-center gap-1 py-2 text-lg font-bold">
             {menuLinks?.map((menu, i) => (
               <li key={i} className="px-6 hover:text-cyan-600">
