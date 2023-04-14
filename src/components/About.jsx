@@ -7,7 +7,7 @@ export const About = () => {
 
   const aboutMe = [
     {
-      text: "Hi i'm a Jim, Junior Full Stack Developer, i have bachelor degree in computer science. I mainly work with MEVN Stack (MongoDB / MySQL, ExpressJS, VueJS, NodeJS) with TypeScript but i'am familiar with other languages and frameworks like PHP & Laravel. If you want check out my projects on GitHub. My goal is to get better every day. Also don't forget to check out my resume."
+      text: "Hi i'm a Jim, Junior Full Stack Developer, i have bachelor degree in computer science. I mainly work with MEVN Stack (MongoDB / MySQL, ExpressJS, VueJS, NodeJS) with TypeScript. If you want check out my projects on GitHub. My goal is to get better every day. Also don't forget to check out my resume."
     }
   ]
   return (
