@@ -1,6 +1,6 @@
 export const About = () => {
   const info = [
-    { text: 'Years experience', count: '1.5' },
+    { text: 'Years experience', count: '2' },
     { text: 'Completed Projects', count: '10' },
     { text: 'Companies Work', count: '2' }
   ]
