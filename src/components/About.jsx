@@ -7,7 +7,7 @@ export const About = () => {
 
   const aboutMe = [
     {
-      text: "Hi i'm a Jim, Junior Full Stack Developer, i have bachelor degree in computer science. I mainly work with MEVN Stack (MongoDB / MySQL, ExpressJS, VueJS, NodeJS) with TypeScript. If you want check out my projects on GitHub. My goal is to get better every day. Also don't forget to check out my resume."
+      text: "Hi i'm a Jim, Frontend Web Developer, i have bachelor degree in computer science. I mainly work with Vuejs, Vuex, TailwindCSS. If you want check out my projects on GitHub and my Resume."
     }
   ]
   return (
@@ -68,11 +68,9 @@ export const About = () => {
             <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
               <section className="bg-gray-800 text-gray-100 rounded-3xl">
                 <div className="container max-w-5xl px-4 py-12 mx-auto">
-                  <div className="grid gap-4 mx-4 sm:grid-cols-12">
-                    <div className="col-span-12 sm:col-span-3"></div>
-                    <div className="relative col-span-12 px-4 space-y-6 sm:col-span-9">
-                      <div className="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-700">
-                        {/* <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
+                  <div className="relative mx-8 col-span-12 px-4 space-y-6 sm:col-span-9">
+                    <div className="col-span-12 space-y-12 relative sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-700">
+                      {/* <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
                           <h3 className="text-xl font-semibold tracking-wide">
                             Donec porta enim vel{' '}
                           </h3>
@@ -84,20 +82,19 @@ export const About = () => {
                             Interdum et malesuada fames ac ante ipsum primis in faucibus.
                           </p>
                         </div> */}
-                        <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
-                          <h3 className="text-xl font-semibold tracking-wide">arx.net S.A.</h3>
-                          <time className="text-xs tracking-wide uppercase text-gray-400">
-                            Nov 2021 - Present
-                          </time>
-                          <p className="mt-3">Frontend Web Developer</p>
-                        </div>
-                        <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-cyan-600">
-                          <h3 className="text-xl font-semibold tracking-wide">Lancom Ltd</h3>
-                          <time className="text-xs tracking-wide uppercase text-gray-400">
-                            Mar 2021 - Sep 2021
-                          </time>
-                          <p className="mt-3">Junior Full Stack Web Developer</p>
-                        </div>
+                      <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-violet-400">
+                        <h3 className="text-xl font-semibold tracking-wide">arx.net S.A / OPAP S.A</h3>
+                        <time className="text-xs tracking-wide uppercase text-gray-400">
+                          Nov 2021 - Present
+                        </time>
+                        <p className="mt-3">Frontend Web Developer</p>
+                      </div>
+                      <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-cyan-600">
+                        <h3 className="text-xl font-semibold tracking-wide">Lancom Ltd</h3>
+                        <time className="text-xs tracking-wide uppercase text-gray-400">
+                          Mar 2021 - Sep 2021
+                        </time>
+                        <p className="mt-3">Junior Full Stack Web Developer</p>
                       </div>
                     </div>
                   </div>

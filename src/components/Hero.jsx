@@ -18,7 +18,7 @@ export const Hero = () => {
             My Name is <span>Dimitris Georgiadis</span>
           </h1>
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-white">
-            Junior Fullstack Developer
+            Frontend Web Developer
           </h4>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
             <a

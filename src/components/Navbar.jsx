@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MaterialSymbolsMenu } from '../components/techs/BurgerMenu'
+import { CloseMenu } from './techs/CloseMenu'
 
 export const Navbar = () => {
   const [sticky, setSticky] = useState(false)
@@ -31,7 +32,7 @@ export const Navbar = () => {
         <div
           className={`${
             sticky ? 'md:bg-white/0 bg-white' : 'bg-white/90'
-          } text-gray-900 md:block hidden px-7 py-2 font-medium rounded-bl-full`}
+          } md:block hidden px-7 py-2 font-medium rounded-bl-full`}
           style={{
             backgroundColor: sticky ? 'white' : 'transparent',
             transition: 'background-color 500ms ease-in-out'
@@ -47,14 +48,16 @@ export const Navbar = () => {
         <div
           onClick={() => setOpen(!open)}
           className={`z-[999]  ${
-            sticky ? 'text-gray-900' : 'text-gray-100'
+            sticky && open ? 'text-gray-900' : 'text-gray-600'
           } text-3xl md:hidden m-5`}>
-          <MaterialSymbolsMenu />
+          <div className="cursor-pointer hover:scale-110 transition duration-300">
+            {open ? <CloseMenu /> : <MaterialSymbolsMenu />}
+          </div>
         </div>
         <div
           className={`md:hidden text-gray-900 absolute w-2/3 h-screen
       px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : 'right-[-100%]'}`}>
-          <ul className="flex flex-col justify-center h-full gap-10 py-2 text-lg">
+          <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
             {menuLinks?.map((menu, i) => (
               <li onClick={() => setOpen(false)} key={i} className="px-6 hover:text-cyan-600">
                 <a href={menu?.link}>{menu?.name}</a>
