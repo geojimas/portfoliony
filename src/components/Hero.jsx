@@ -1,4 +1,4 @@
-import hero from '../assets/me.jpg'
+import hero from '../assets/me.png'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 
