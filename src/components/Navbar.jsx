@@ -51,7 +51,7 @@ export const Navbar = () => {
             sticky && open ? 'text-gray-900' : 'text-gray-600'
           } text-3xl md:hidden m-5`}>
           <div className="cursor-pointer hover:scale-110 transition duration-300">
-            {open ? <CloseMenu /> : <MaterialSymbolsMenu />}
+            {open ? <CloseMenu /> : <MaterialSymbolsMenu color={sticky ? 'black' : 'white'} />}
           </div>
         </div>
         <div
