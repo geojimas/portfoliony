@@ -11,6 +11,7 @@ import project8 from '../assets/lmn.png'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper'
+import { motion } from 'framer-motion'
 
 export const Project = () => {
   const projects = [
@@ -63,6 +64,11 @@ export const Project = () => {
     }
   ]
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeIn', duration: 1 }}
+      >
     <section id="projects" className="py-16 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
@@ -117,5 +123,6 @@ export const Project = () => {
         </div>
       </div>
     </section>
+    </motion.div>
   )
 }

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export const About = () => {
   const info = [
     { text: 'Years experience', count: '2' },
@@ -11,6 +13,11 @@ export const About = () => {
     }
   ]
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeIn', duration: 1 }}
+      >
     <section id="about" className="py-16 text-white">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">
@@ -105,5 +112,6 @@ export const About = () => {
         </div>
       </div>
     </section>
+    </motion.div>
   )
 }

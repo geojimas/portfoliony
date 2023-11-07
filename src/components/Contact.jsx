@@ -1,3 +1,6 @@
+
+import { motion } from 'framer-motion'
+
 export const Contact = () => {
   // const contactInfo = [
   //   { logo: 'mail', text: 'codeaprogram@gmail.com' },
@@ -8,6 +11,11 @@ export const Contact = () => {
   //   }
   // ]
   return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeIn', duration: 1 }}
+      >
     <section id="contact" className="py-16 px-3 text-white">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">
@@ -64,5 +72,6 @@ export const Contact = () => {
         </div>
       </div>
     </section>
+    </motion.div>
   )
 }
