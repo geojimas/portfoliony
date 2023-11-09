@@ -26,7 +26,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between">
         <div className="mx-7">
           <h4 className="text-4xl uppercase font-bold">
-            Dim<span className="text-cyan-600">it</span>ris
+            Dim<span className="text-yellow-400">it</span>ris
           </h4>
         </div>
         <div
@@ -39,7 +39,7 @@ export const Navbar = () => {
           }}>
           <ul className="flex items-center gap-1 py-2 text-lg font-bold">
             {menuLinks?.map((menu, i) => (
-              <li key={i} className="px-6 hover:text-cyan-600">
+              <li key={i} className="px-6 hover:text-yellow-500 transition-colors">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}
@@ -59,7 +59,7 @@ export const Navbar = () => {
       px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : 'right-[-100%]'}`}>
           <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
             {menuLinks?.map((menu, i) => (
-              <li onClick={() => setOpen(false)} key={i} className="px-6 hover:text-cyan-600">
+              <li onClick={() => setOpen(false)} key={i} className="px-6">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}

@@ -4,9 +4,9 @@ import project2 from '../assets/typer.png'
 import project3 from '../assets/weather.png'
 import project4 from '../assets/bmi.png'
 import project5 from '../assets/lot.png'
-import project6 from '../assets/rng.png'
 import project7 from '../assets/auth.png'
 import project8 from '../assets/lmn.png'
+import project9 from '../assets/coupons.png'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -15,6 +15,12 @@ import { motion } from 'framer-motion'
 
 export const Project = () => {
   const projects = [
+    {
+      img: project9,
+      name: 'Job Coupons App',
+      github_link: 'https://github.com/geojimas/job-coupons',
+      live_link: 'https://job-coupons.netlify.app'
+    },
     {
       img: project1,
       name: 'Movie App',
@@ -46,12 +52,6 @@ export const Project = () => {
       live_link: 'https://lott.netlify.app'
     },
     {
-      img: project6,
-      name: 'Random Password Generator',
-      github_link: 'https://github.com/geojimas/randy',
-      live_link: 'https://randy66.netlify.app'
-    },
-    {
       img: project7,
       name: 'JWT Authentication',
       github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
@@ -67,12 +67,12 @@ export const Project = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 1 }}
+      transition={{ ease: 'easeIn', duration: 2 }}
       >
     <section id="projects" className="py-16 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
-          My <span className="text-cyan-600">Projects</span>
+          My <span className="text-yellow-400">Projects</span>
         </h3>
         <p className="text-gray-400 mt-3 text-lg">My awesome works</p>
       </div>
@@ -104,14 +104,14 @@ export const Project = () => {
                     <a
                       href={project.github_link}
                       target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block hover:scale-105 cursor-pointer rounded-md"
+                      className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
                       rel="noreferrer">
                       Github
                     </a>
                     <a
                       href={project.live_link}
                       target="_blank"
-                      className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block hover:scale-105 cursor-pointer rounded-md"
+                      className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
                       rel="noreferrer">
                       Live Demo
                     </a>

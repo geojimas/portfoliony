@@ -19,7 +19,7 @@ export const Contact = () => {
     <section id="contact" className="py-16 px-3 text-white">
       <div className="text-center mt-8">
         <h3 className="text-4xl font-semibold">
-          Contact <span className="text-cyan-600">Me</span>
+          Contact <span className="text-yellow-400">Me</span>
         </h3>
         <p className="text-gray-400 mt-3 text-lg">Get in touch</p>
 
@@ -47,7 +47,7 @@ export const Contact = () => {
           </div>
         </div> */}
         <div className="container flex flex-col max-w-2xl p-6 mx-auto divide-y rounded-md bg-gray-600 text-gray-100">
-          <div className="flex flex-wrap justify-between p-4 border-4 rounded-3xl hover:shadow-lg hover:shadow-cyan-600/70">
+          <div className="flex flex-wrap justify-between p-4 border-4 rounded-3xl hover:shadow-lg hover:shadow-yellow-400/70">
             <div className="flex space-x-4">
               <div>
                 <img
