@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import project1 from '../assets/nxmov.png'
 import project2 from '../assets/typer.png'
-import project3 from '../assets/weather.png'
 import project4 from '../assets/bmi.png'
 import project5 from '../assets/lot.png'
 import project7 from '../assets/auth.png'
@@ -32,12 +31,6 @@ export const Project = () => {
       name: 'Type game',
       github_link: 'https://github.com/geojimas/vue-typing-game',
       live_link: 'https://typv.netlify.app'
-    },
-    {
-      img: project3,
-      name: 'Weather App',
-      github_link: 'https://github.com/geojimas/vue-weather',
-      live_link: 'https://opweather.netlify.app'
     },
     {
       img: project4,
@@ -97,9 +90,9 @@ export const Project = () => {
             modules={[Pagination, Autoplay]}>
             {projects.map((project, i) => (
               <SwiperSlide key={i}>
-                <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
+                <div className="p-4 mb-9 bg-slate-700 rounded-xl">
                   <img src={project.img} alt="" className="rounded-lg" />
-                  <h3 className="text-xl my-4">{project.name}</h3>
+                  <h3 className="text-xl my-2">{project.name}</h3>
                   <div className="flex gap-3">
                     <a
                       href={project.github_link}

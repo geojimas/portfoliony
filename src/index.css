@@ -20,5 +20,6 @@ body {
 
 .swiper-pagination-bullet {
     @apply bg-white;
+    margin-top: 20px;
 }
 
