@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    @apply box-border bg-gray-600 text-gray-100;
+    @apply box-border bg-sky-950 text-gray-100;
 }
 
 

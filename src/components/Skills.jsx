@@ -25,10 +25,9 @@ export const Skills = () => {
   return (
     <section id="skills" className="py-4 pb-16 mb-10 bg-gray-800 rounded-3xl relative">
       <div className="mt-8 text-gray-100 text-center">
-        <h3 className="text-4xl font-semibold">
+        <h3 className="text-4xl font-semibold mb-6">
           My <span className="text-yellow-400">Skills</span>
         </h3>
-        <p className="text-gray-400 mt-3 text-lg">My knowledge</p>
         <div className="flex items-center justify-center mt-12 gap-10 flex-wrap">
           <AnimatePresence>
           {logos.map((logo, index) => (
@@ -41,7 +40,7 @@ export const Skills = () => {
               className="border-2 group transition-all border-yellow-600 relative min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-yellow-400/70"
               >
               <div className="w-18 h-16 flex items-center justify-center rounded-full">
-                <div className="text-6xl w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center">
+                <div className="text-6xl w-16 h-16 rounded-full flex items-center justify-center">
                   {logo}
                 </div>
               </div>

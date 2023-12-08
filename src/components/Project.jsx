@@ -67,7 +67,6 @@ export const Project = () => {
         <h3 className="text-4xl font-semibold">
           My <span className="text-yellow-400">Projects</span>
         </h3>
-        <p className="text-gray-400 mt-3 text-lg">My awesome works</p>
       </div>
       <br />
       <div className="flex justify-center max-w-6xl gap-6 px-5 mx-auto items-center relative">
