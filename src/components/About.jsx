@@ -45,7 +45,7 @@ export const About = () => {
                 <div className="flex justify-start">
                   <a
                     target={'_blank'}
-                    href="https://www.canva.com/design/DAEsOtedHcw/9nOcuUvuW3ZdK1oig9q1Xg/view?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
+                    href="https://www.canva.com/design/DAEsOtedHcw/jbCPzBBTbc125M5MXdEr4w/edit?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                     className="relative inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none hover:text-sky-950 hover:bg-yellow-500 hover:shadow-lg"
                     rel="noreferrer">
                     <span className="absolute right-0 transition-transform translate-x-full group-hover:-translate-x-4">
