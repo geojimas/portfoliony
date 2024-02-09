@@ -1,7 +1,5 @@
-/* eslint-disable react/jsx-key */
 import React from 'react'
 import { LogosVue } from './techs/Vue'
-// import { LogosLaravel } from './techs/Laravel'
 import { LogosTailwindcssIcon } from './techs/Tailwind'
 import { LogosTypescriptIcon } from './techs/TypeScript'
 import { LogosJavascript } from './techs/Javascript'
@@ -17,7 +15,6 @@ const logos = [
   <LogosReact />,
   <LogosTailwindcssIcon />,
   <LogosNodejsIcon />,
-  // <LogosLaravel />,
   <LogosGitIcon />
 ]
 
