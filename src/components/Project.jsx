@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import project1 from '../assets/nxmov.png'
-import project2 from '../assets/typer.png'
+import project2 from '../assets/rec.png'
 import project4 from '../assets/bmi.png'
 import project5 from '../assets/lot.png'
 import project7 from '../assets/auth.png'
@@ -28,9 +28,9 @@ export const Project = () => {
     },
     {
       img: project2,
-      name: 'Type game',
-      github_link: 'https://github.com/geojimas/vue-typing-game',
-      live_link: 'https://typv.netlify.app'
+      name: 'Recipes',
+      github_link: 'https://github.com/geojimas/recipes-app',
+      live_link: 'https://recipesq.netlify.app'
     },
     {
       img: project4,
