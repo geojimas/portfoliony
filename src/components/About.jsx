@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 
 export const About = () => {
   const info = [
-    { text: 'Years experience', count: '2.5' },
-    { text: 'Completed Projects', count: '8' },
+    { text: 'Years experience', count: '3' },
+    { text: 'Completed Projects', count: '10' },
     { text: 'Companies Work', count: '2' }
   ]
 
