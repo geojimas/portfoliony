@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export const About = () => {
   const info = [
     { text: 'Years experience', count: '3' },
-    { text: 'Completed Projects', count: '10' },
+    { text: 'Completed Projects', count: '8' },
     { text: 'Companies Work', count: '2' }
   ]
 
@@ -80,10 +80,10 @@ export const About = () => {
             </div>
             <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center hover:scale-105">
               <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm aboutImg ">
-                <section className="bg-gray-800 text-gray-100 rounded-3xl">
+                <section className="bg-gray-900 text-gray-100 rounded-3xl">
                   <div className="container transition-all max-w-5xl px-4 py-12 mx-auto">
                     <div className="relative mx-8 col-span-12 px-4 space-y-6 sm:col-span-9">
-                      <div className="col-span-12 space-y-12 relative sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-700">
+                      <div className="col-span-12 space-y-12 relative sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-500">
                         {/* <div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400">
                           <h3 className="text-xl font-semibold tracking-wide">
                             Donec porta enim vel{' '}
