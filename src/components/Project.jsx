@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import project1 from '../assets/nxmov.png'
 import project2 from '../assets/rec.png'
+import project3 from '../assets/realt.png'
 import project4 from '../assets/bmi.png'
 import project5 from '../assets/lot.png'
 import project7 from '../assets/auth.png'
@@ -54,6 +55,12 @@ export const Project = () => {
       img: project8,
       name: 'Stories REST API',
       github_link: 'https://github.com/geojimas/stories-REST-API'
+    },
+    {
+      img: project3,
+      name: 'Real Time App , Bitcoin Currency price changes every 8 seconds',
+      github_link: 'https://github.com/geojimas/real-time-data-api',
+      live_link: 'https://real-time-data-api.onrender.com'
     }
   ]
   return (
