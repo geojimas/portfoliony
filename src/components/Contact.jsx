@@ -14,7 +14,7 @@ export const Contact = () => {
           <div className="container flex flex-col max-w-xl p-4 mx-auto divide-y rounded-md  bg-sky-950 text-gray-100">
             <div className="flex flex-wrap justify-center sm:justify-between p-4 border-4 rounded-3xl hover:shadow-lg hover:shadow-yellow-400/70">
               <div className="flex space-x-2 items-center">
-                <span className="text-md font-bold text-white">🟢 Active now</span>
+                <span className="text-md font-bold text-white">🟢 Active</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="p-4 space-y-2">
