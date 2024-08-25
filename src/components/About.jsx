@@ -59,7 +59,7 @@ export const About = () => {
                       Resume
                     </span>
                   </a>
-                  <a
+                  {/* <a
                     target={'_blank'}
                     href="https://drive.google.com/file/d/13N0k6XVarBfqA3k8o_JjjbdBzSZuB7Hs/view?usp=share_link"
                     className="relative inline-flex items-center px-8 py-3 overflow-hidden text-white border-2 rounded group focus:outline-none ml-10 hover:text-sky-950 hover:bg-yellow-500 hover:shadow-lg"
@@ -74,7 +74,7 @@ export const About = () => {
                     <span className="text-md font-bold transition-all group-hover:mr-4">
                       Thesis
                     </span>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
