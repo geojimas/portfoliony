@@ -1,7 +1,8 @@
-import hero from '../assets/me.jpg'
+import { src } from '../assets/me.jpg?&format=webp&as=metadata'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 import { motion } from 'framer-motion'
+
 
 export const Hero = () => {
   return (
@@ -11,7 +12,7 @@ export const Hero = () => {
       transition={{ ease: 'easeIn', duration: 1 }}>
       <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
         <div className="flex-1 flex items-center justify-center h-full">
-          <img src={hero} alt="" className="sm:max-w-xs h-full mt-6 object-cover rounded-full" />
+          <img src={src} alt="" className="sm:max-w-xs h-full mt-6 object-cover rounded-full" />
         </div>
         <div className="flex-1">
           <div className="md:text-left text-center">
