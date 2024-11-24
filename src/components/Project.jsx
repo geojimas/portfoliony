@@ -1,22 +1,22 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import project1 from '../assets/nxmov.png'
-import project2 from '../assets/rec.png'
-import project3 from '../assets/realt.png'
-import project4 from '../assets/bmi.png'
-import project5 from '../assets/lot.png'
-import project7 from '../assets/auth.png'
-import project8 from '../assets/lmn.png'
-import project9 from '../assets/coupons.png'
+import { Pagination, Autoplay } from 'swiper'
+import { motion } from 'framer-motion'
+import { src as project1 } from '../assets/nxmov.png?&format=webp&as=metadata'
+import { src as project2 } from '../assets/rec.png?&format=webp&as=metadata'
+import { src as project3 } from '../assets/realt.png?&format=webp&as=metadata'
+import { src as project4 } from '../assets/bmi.png?&format=webp&as=metadata'
+import { src as project5 } from '../assets/lot.png?&format=webp&as=metadata'
+import { src as project6 } from '../assets/auth.png?&format=webp&as=metadata'
+import { src as project7 } from '../assets/lmn.png?&format=webp&as=metadata'
+import { src as project8 } from '../assets/coupons.png?&format=webp&as=metadata'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Pagination, Autoplay } from 'swiper'
-import { motion } from 'framer-motion'
 
 export const Project = () => {
   const projects = [
     {
-      img: project9,
+      img: project8,
       name: 'Job Coupons App',
       github_link: 'https://github.com/geojimas/job-coupons',
       live_link: 'https://job-coupons.netlify.app'
@@ -46,13 +46,13 @@ export const Project = () => {
       live_link: 'https://lott.netlify.app'
     },
     {
-      img: project7,
+      img: project6,
       name: 'JWT Authentication',
       github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
       live_link: 'https://climax245.up.railway.app'
     },
     {
-      img: project8,
+      img: project7,
       name: 'Stories REST API',
       github_link: 'https://github.com/geojimas/stories-REST-API'
     },

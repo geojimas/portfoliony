@@ -3,7 +3,6 @@ import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 import { motion } from 'framer-motion'
 
-
 export const Hero = () => {
   return (
     <motion.div
