@@ -34,7 +34,7 @@ export const Hero = () => {
                 <LogosGitlab />
               </a>
               <a
-                href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa"
+                href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa/"
                 target={'_blank'}
                 className="hover:scale-125 cursor-pointer transition-all"
                 rel="noreferrer">
