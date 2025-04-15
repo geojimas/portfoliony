@@ -1,4 +1,4 @@
-import { src } from '../assets/me.jpg?&format=webp&as=metadata'
+import { src } from '../assets/me.png?&format=webp&as=metadata'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 import { motion } from 'framer-motion'
