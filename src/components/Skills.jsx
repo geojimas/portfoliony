@@ -3,10 +3,11 @@ import { LogosVue } from './techs/Vue'
 import { LogosTailwindcssIcon } from './techs/Tailwind'
 import { LogosTypescriptIcon } from './techs/TypeScript'
 import { LogosJavascript } from './techs/Javascript'
-import { LogosNodejsIcon } from './techs/Node'
+// import { LogosNodejsIcon } from './techs/Node'
 import { LogosGitIcon } from './techs/Git'
 import { LogosReact } from './techs/React'
 import { LogosWebpack } from './techs/Webpack'
+import { LogosDocker } from './techs/Docker.jsx'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const logos = [
@@ -14,10 +15,10 @@ const logos = [
   { component: <LogosTypescriptIcon />, key: 'typescript' },
   { component: <LogosVue />, key: 'vue' },
   { component: <LogosReact />, key: 'react' },
-  { component: <LogosWebpack />, key: 'webpack' },
   { component: <LogosTailwindcssIcon />, key: 'tailwind' },
-  { component: <LogosNodejsIcon />, key: 'nodejs' },
-
+  { component: <LogosWebpack />, key: 'webpack' },
+  { component: <LogosDocker />, key: 'docker' },
+  // { component: <LogosNodejsIcon />, key: 'nodejs' },
   { component: <LogosGitIcon />, key: 'git' }
 ]
 

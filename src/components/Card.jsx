@@ -2,17 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const Card = ({ children }) => {
-  return (<StyledWrapper>
-    <div className="card">
-      <div className="content">
-        <div className="back">
-          <div className="back-content">
-            {children}
-          </div>
-        </div>
-      </div>
-    </div>
-  </StyledWrapper>)
+  return (
+        <StyledWrapper>
+            <div className="card">
+                <div className="content">
+                    <div className="back">
+                        <div className="back-content">
+                            {children}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </StyledWrapper>
+  )
 }
 
 const StyledWrapper = styled.div`
