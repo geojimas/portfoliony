@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
     .card {
         overflow: visible;
         width: 330px;
-        height: 300px;
+        height: 310px;
     }
 
     .content {

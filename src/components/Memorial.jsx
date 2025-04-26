@@ -6,7 +6,7 @@ export const Memorial = () => {
     {
       name: 'ΑΡΧ ΝΕΤ Α.Ε.',
       period: 'Nov 2021 - Present',
-      position: 'Frontend Developer',
+      position: 'Front-End Developer',
       logo: arxnet,
       active: true
     },

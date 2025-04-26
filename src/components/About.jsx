@@ -8,24 +8,25 @@ export const About = () => {
     text: 'Completed Projects', count: '8'
   }, { text: 'Companies Work', count: '2' }]
 
-  const aboutMe = [{
-    text: 'Hi i\'m a Jim, Frontend Web Developer, i have bachelor degree in computer science. I mainly work with VueJS, Vuex, TailwindCSS, NodeJS. If you want check out my projects on GitHub and my Resume.'
-  }]
   return (<motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ ease: 'easeIn', duration: 1 }}>
     <section id="about" className="py-16 text-white">
       <div className="text-center mt-8">
-        <h3 className="text-4xl font-semibold">
+        <h3 className="text-4xl font-semibold mb-8">
           About <span className="text-yellow-400">Me</span>
         </h3>
         <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
           <div className="p-2">
             <div className="text-gray-300 my-4">
-              {aboutMe.map(content => (<p key={content} className="text-justify leading-7 w-11/12 mx-auto">
-                {content.text}
-              </p>))}
+              <ol>
+                <li>Hi, I&#39;m Dimitris, a Front-End Developer.</li>
+                <li>I have a Bachelor&#39;s degree in Computer Science.</li>
+                <li>I mainly work with Vue.js, Vuex, Tailwind CSS, and Node.js.</li>
+                <li>You can check out my projects on Github.</li>
+                <li>Also feel free to view my Resume.</li>
+              </ol>
               <div className="flex justify-center mt-10 items-center gap-7">
                 {info.map(content => (<div key={content.text}>
                   <h3 className="md:text-4xl text-2xl font-semibold text-yellow-400">
