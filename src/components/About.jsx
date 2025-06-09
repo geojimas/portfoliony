@@ -4,7 +4,7 @@ import { Card } from './Card.jsx'
 import { Memorial } from './Memorial.jsx'
 
 export const About = () => {
-  const info = [{ text: 'Years experience', count: '3 +' }, {
+  const info = [{ text: 'Years experience', count: '4' }, {
     text: 'Completed Projects', count: '8'
   }, { text: 'Companies Work', count: '2' }]
 

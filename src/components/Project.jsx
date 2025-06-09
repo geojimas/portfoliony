@@ -9,18 +9,12 @@ import { src as project5 } from '../assets/lot.png?&format=webp&as=metadata'
 import { src as project6 } from '../assets/auth.png?&format=webp&as=metadata'
 import { src as project7 } from '../assets/lmn.png?&format=webp&as=metadata'
 import { src as project8 } from '../assets/coupons.png?&format=webp&as=metadata'
-
+import { src as project9 } from '../assets/vibeVue.png?&format=webp&as=metadata'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 export const Project = () => {
   const projects = [
-    {
-      img: project8,
-      name: 'Job Coupons App',
-      github_link: 'https://github.com/geojimas/job-coupons',
-      live_link: 'https://job-coupons.netlify.app'
-    },
     {
       img: project1,
       name: 'Movie App',
@@ -32,6 +26,12 @@ export const Project = () => {
       name: 'Recipes',
       github_link: 'https://github.com/geojimas/recipes-app',
       live_link: 'https://recipesq.netlify.app'
+    },
+    {
+      img: project3,
+      name: 'Real Time App , Bitcoin Currency price changes every 8 seconds',
+      github_link: 'https://github.com/geojimas/real-time-data-api',
+      live_link: 'https://real-time-data-api.onrender.com'
     },
     {
       img: project4,
@@ -57,10 +57,16 @@ export const Project = () => {
       github_link: 'https://github.com/geojimas/stories-REST-API'
     },
     {
-      img: project3,
-      name: 'Real Time App , Bitcoin Currency price changes every 8 seconds',
-      github_link: 'https://github.com/geojimas/real-time-data-api',
-      live_link: 'https://real-time-data-api.onrender.com'
+      img: project8,
+      name: 'Job Coupons App',
+      github_link: 'https://github.com/geojimas/job-coupons',
+      live_link: 'https://job-coupons.netlify.app'
+    },
+    {
+      img: project9,
+      name: 'Vue 3 + Vite Starter Template',
+      github_link: 'https://github.com/geojimas/VibeVue',
+      live_link: 'https://vibe-vue.vercel.app'
     }
   ]
   return (

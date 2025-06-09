@@ -2,6 +2,7 @@ import { src } from '../assets/me.png?&format=webp&as=metadata'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 import { motion } from 'framer-motion'
+import { Typewriter } from 'react-simple-typewriter'
 
 export const Hero = () => {
   return (<motion.div
@@ -19,7 +20,16 @@ export const Hero = () => {
                 Hello!
                 <br />
               </span>
-            My Name is <span>Dimitris Georgiadis</span>
+          <span>
+            <Typewriter
+                words={['My Name is Dimitris Georgiadis']}
+                typeSpeed={120}
+                delaySpeed={1000}
+                cursor={true}
+                cursorStyle='_'
+                cursorBlinking={true}
+            />
+            </span>
           </h1>
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-white">
             <span className="text-yellow-400">Front-End</span> Developer
