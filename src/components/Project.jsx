@@ -5,11 +5,10 @@ import { src as project1 } from '../assets/nxmov.png?&format=webp&as=metadata'
 import { src as project2 } from '../assets/rec.png?&format=webp&as=metadata'
 import { src as project3 } from '../assets/realt.png?&format=webp&as=metadata'
 import { src as project4 } from '../assets/bmi.png?&format=webp&as=metadata'
-import { src as project5 } from '../assets/lot.png?&format=webp&as=metadata'
-import { src as project6 } from '../assets/auth.png?&format=webp&as=metadata'
-import { src as project7 } from '../assets/lmn.png?&format=webp&as=metadata'
-import { src as project8 } from '../assets/coupons.png?&format=webp&as=metadata'
-import { src as project9 } from '../assets/vibeVue.png?&format=webp&as=metadata'
+import { src as project5 } from '../assets/auth.png?&format=webp&as=metadata'
+import { src as project6 } from '../assets/lmn.png?&format=webp&as=metadata'
+import { src as project7 } from '../assets/coupons.png?&format=webp&as=metadata'
+import { src as project8 } from '../assets/vibeVue.png?&format=webp&as=metadata'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -41,29 +40,23 @@ export const Project = () => {
     },
     {
       img: project5,
-      name: 'Lottery Game',
-      github_link: 'https://github.com/geojimas/lottery-game',
-      live_link: 'https://lott.netlify.app'
-    },
-    {
-      img: project6,
       name: 'JWT Authentication',
       github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
       live_link: 'https://climax245.up.railway.app'
     },
     {
-      img: project7,
+      img: project6,
       name: 'Stories REST API',
       github_link: 'https://github.com/geojimas/stories-REST-API'
     },
     {
-      img: project8,
+      img: project7,
       name: 'Job Coupons App',
       github_link: 'https://github.com/geojimas/job-coupons',
       live_link: 'https://job-coupons.netlify.app'
     },
     {
-      img: project9,
+      img: project8,
       name: 'Vue 3 + Vite Starter Template',
       github_link: 'https://github.com/geojimas/VibeVue',
       live_link: 'https://vibe-vue.vercel.app'
