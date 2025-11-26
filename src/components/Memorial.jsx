@@ -30,9 +30,9 @@ export const Memorial = () => {
                           className={`flex flex-col sm:relative sm:before:absolute sm:before:top-4 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] ${company.active ? 'before:bg-green-400' : 'before:bg-red-400'}`}
                       >
                           <div className="flex items-center justify-center">
-                              <img src={company.logo} alt="logo" className="rounded-full bg-white w-16 h-16 mr-2 mb-6" />
+                              <img src={company.logo} alt="logo" className="rounded-full object-contain bg-white w-20 h-16 mr-2 mb-6" />
                               <div>
-                                  <h3 className="text-xl font-semibold tracking-wide">{company.name}</h3>
+                                  <h3 className="text-lg font-semibold tracking-wide">{company.name}</h3>
                                   <time className="text-xs tracking-wide uppercase text-gray-300">
                                       {company.period}
                                   </time>
