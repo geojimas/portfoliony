@@ -39,7 +39,7 @@ export const About = () => {
               <div className="flex justify-center">
                 <a
                   target={'_blank'}
-                  href="https://www.canva.com/design/DAEsOtedHcw/jbCPzBBTbc125M5MXdEr4w/edit?utm_content=DAEsOtedHcw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                  href="https://app.enhancv.com/share/9f7135a3/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
                   rel="noreferrer">
                   <ResumeButton text={'Resume'} />
                 </a>
