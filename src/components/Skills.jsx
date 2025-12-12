@@ -1,4 +1,3 @@
-import React from 'react'
 import { LogosVue } from './techs/Vue'
 import { LogosTailwindcssIcon } from './techs/Tailwind'
 import { LogosTypescriptIcon } from './techs/TypeScript'
