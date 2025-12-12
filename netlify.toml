@@ -1,3 +1,8 @@
+[build.environment]
+# bypass npm auto install
+NPM_FLAGS = "--version"
+NODE_VERSION = "20"
+
 [build]
 publish = "dist"
 command = "npm install && npm run build"
