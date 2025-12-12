@@ -1,4 +1,4 @@
-export const LogosVue = props => {
+export function LogosVue(props) {
   return (
     <svg width="1.16em" height="1em" viewBox="0 0 256 221" {...props}>
       <path fill="#41B883" d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"></path>
