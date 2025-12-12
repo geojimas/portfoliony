@@ -19,22 +19,20 @@
 }
 
 html {
-    @apply scroll-smooth;
-    scroll-padding: 5vmax;
-    font-family: 'Quicksand', sans-serif;
+  @apply scroll-smooth;
+  scroll-padding: 5vmax;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
-    @apply box-border bg-sky-950 text-gray-100;
+  @apply box-border bg-sky-950 text-gray-100;
 }
 
-
 .aboutImg::after {
-    @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-800 -z-10;
+  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-800 -z-10;
 }
 
 .swiper-pagination-bullet {
-    @apply bg-white;
-    margin-top: 20px;
+  @apply bg-white;
+  margin-top: 20px;
 }
-

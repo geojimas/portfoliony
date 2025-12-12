@@ -1,4 +1,4 @@
-export const LogosJavascript = props => {
+export function LogosJavascript(props) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 256 256" {...props}>
       <path fill="#F7DF1E" d="M0 0h256v256H0V0Z"></path>
