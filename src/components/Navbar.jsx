@@ -20,7 +20,7 @@ export const Navbar = () => {
   }, [])
   return (
     <nav
-      className={`fixed w-full left-0 top-0 z-[999] ${
+      className={`fixed w-full left-0 top-0 z-999 ${
         sticky ? 'bg-white  text-gray-900' : 'text-white'
       }`}>
       <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ export const Navbar = () => {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-[999]  ${
+          className={`z-999  ${
             sticky && open ? 'text-gray-900' : 'text-gray-600'
           } text-3xl md:hidden m-5`}>
           <div className="cursor-pointer hover:scale-110 transition duration-300">
@@ -56,7 +56,7 @@ export const Navbar = () => {
         </div>
         <div
           className={`md:hidden text-gray-900 absolute w-2/3 h-screen
-      px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : 'right-[-100%]'}`}>
+      px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : '-right-full'}`}>
           <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
             {menuLinks?.map((menu, i) => (
               <li onClick={() => setOpen(false)} key={i} className="px-6">

@@ -27,7 +27,7 @@ export const Memorial = () => {
                   { companies.map((company, index) => (
                       <div
                           key={index}
-                          className={`flex flex-col sm:relative sm:before:absolute sm:before:top-4 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] ${company.active ? 'before:bg-green-400' : 'before:bg-red-400'}`}
+                          className={`flex flex-col sm:relative sm:before:absolute sm:before:top-4 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-1 ${company.active ? 'before:bg-green-400' : 'before:bg-red-400'}`}
                       >
                           <div className="flex items-center justify-center">
                               <img src={company.logo} alt="logo" className="rounded-full object-contain bg-white w-20 h-16 mr-2 mb-6" />
