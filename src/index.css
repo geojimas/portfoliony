@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap');
 @import 'tailwindcss';
 
 /*
@@ -9,6 +10,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -21,7 +23,10 @@
 html {
   @apply scroll-smooth;
   scroll-padding: 5vmax;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Cause", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
