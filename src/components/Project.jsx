@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper'
+import { Pagination, Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import { src as project1 } from '../assets/nxmov.png?&format=webp&as=metadata'
 import { src as project2 } from '../assets/rec.png?&format=webp&as=metadata'
