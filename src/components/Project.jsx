@@ -15,47 +15,55 @@ import 'swiper/css/pagination'
 export function Project() {
   const projects = [
     {
+      id: 1,
       img: project1,
       name: 'Movie App',
       github_link: 'https://github.com/geojimas/nuxt-movies',
       live_link: 'https://mos.vercel.app',
     },
     {
+      id: 2,
       img: project2,
       name: 'Recipes',
       github_link: 'https://github.com/geojimas/recipes-app',
       live_link: 'https://recipesq.netlify.app',
     },
     {
+      id: 3,
       img: project3,
       name: 'Real Time App , Bitcoin Currency price changes every 8 seconds',
       github_link: 'https://github.com/geojimas/real-time-data-api',
       live_link: 'https://real-time-data-api.onrender.com',
     },
     {
+      id: 4,
       img: project4,
       name: 'BMI Calculator',
       github_link: 'https://github.com/geojimas/vue-bmi-calc',
       live_link: 'https://vbmi.netlify.app',
     },
     {
+      id: 5,
       img: project5,
       name: 'JWT Authentication',
       github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
       live_link: 'https://climax245.up.railway.app',
     },
     {
+      id: 6,
       img: project6,
       name: 'Stories REST API',
       github_link: 'https://github.com/geojimas/stories-REST-API',
     },
     {
+      id: 7,
       img: project7,
       name: 'Job Coupons App',
       github_link: 'https://github.com/geojimas/job-coupons',
       live_link: 'https://job-coupons.netlify.app',
     },
     {
+      id: 8,
       img: project8,
       name: 'Vue 3 + Vite Starter Template',
       github_link: 'https://github.com/geojimas/VibeVue',
@@ -96,8 +104,8 @@ export function Project() {
               }}
               modules={[Pagination, Autoplay]}
             >
-              {projects.map((project, i) => (
-                <SwiperSlide key={i}>
+              {projects.map((project, _index) => (
+                <SwiperSlide key={project.id}>
                   <div className="p-4 mb-9 bg-slate-700 rounded-xl">
                     <img src={project.img} alt="" className="rounded-lg" />
                     <h3 className="text-xl my-2">{project.name}</h3>

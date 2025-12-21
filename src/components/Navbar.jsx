@@ -6,16 +6,22 @@ export function Navbar() {
   const [sticky, setSticky] = useState(false)
   const [open, setOpen] = useState(false)
   const menuLinks = [
-    { name: 'HOME', link: '#home' },
-    { name: 'ABOUT', link: '#about' },
-    { name: 'SKILLS', link: '#skills' },
-    { name: 'PROJECTS', link: '#projects' },
-    { name: 'CONTACT', link: '#contact' },
+    { id: 1, name: 'HOME', link: '#home' },
+    { id: 2, name: 'ABOUT', link: '#about' },
+    { id: 3, name: 'SKILLS', link: '#skills' },
+    { id: 4, name: 'PROJECTS', link: '#projects' },
+    { id: 5, name: 'CONTACT', link: '#contact' },
   ]
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      window.scrollY > 0 ? setSticky(true) : setSticky(false)
-    })
+    function handleScroll() {
+      setSticky(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
   return (
     <nav
@@ -41,8 +47,8 @@ export function Navbar() {
           }}
         >
           <ul className="flex items-center gap-1 py-2 text-lg font-bold">
-            {menuLinks?.map((menu, i) => (
-              <li key={i} className="px-6 hover:text-yellow-500 transition-colors">
+            {menuLinks?.map((menu, _index) => (
+              <li key={menu?.id} className="px-6 hover:text-yellow-500 transition-colors">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}
@@ -63,8 +69,8 @@ export function Navbar() {
       px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : '-right-full'}`}
         >
           <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
-            {menuLinks?.map((menu, i) => (
-              <li onClick={() => setOpen(false)} key={i} className="px-6">
+            {menuLinks?.map((menu, _index) => (
+              <li onClick={() => setOpen(false)} key={menu?.id} className="px-6">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}
