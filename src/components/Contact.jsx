@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { MaterialIconThemeEmail as Folder } from './techs/Folder.jsx'
 
 export function Contact() {
   return (
@@ -15,15 +16,14 @@ export function Contact() {
             <span className="text-yellow-400">Me</span>
           </h3>
           <div className="container flex flex-col max-w-md p-4 mx-auto divide-y rounded-md  bg-sky-950 text-gray-100">
-            <div className="flex flex-wrap flex-col justify-center sm:justify-between p-4 border-2  rounded-3xl hover:shadow-lg hover:shadow-green-700/70 transition duration-300">
+            <div className="flex flex-wrap flex-col justify-center sm:justify-between p-4 border-2  rounded-3xl hover:shadow-lg hover:shadow-yellow-400 transition duration-300">
               <div className="flex justify-center space-x-2 items-center">
                 <span className="text-md font-bold text-white">🟢 Active now</span>
               </div>
-              <div className="flex justify-center items-center">
-                <div className="p-4 space-y-2">
-                  <p className="lg:text-xl font-bold text-white tracking-wider decoration-green-400 underline underline-offset-8">
-                    georgiadis8636@gmail.com
-                  </p>
+              <div className="flex justify-center items-center p-2 space-y-2">
+                <Folder className="mt-4 mr-4" />
+                <div className="lg:text-xl font-bold text-white tracking-wider decoration-yellow-400 underline underline-offset-8">
+                  georgiadis8636@gmail.com
                 </div>
               </div>
             </div>
