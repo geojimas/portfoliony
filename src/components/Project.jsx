@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
-import { Autoplay, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Autoplay, Pagination } from 'swiper/modules'
+// import { Swiper, SwiperSlide } from 'swiper/react'
+import Slider from 'react-slick'
 import { src as project5 } from '../assets/auth.png?&format=webp&as=metadata'
 import { src as project4 } from '../assets/bmi.png?&format=webp&as=metadata'
 import { src as project7 } from '../assets/coupons.png?&format=webp&as=metadata'
@@ -9,10 +9,23 @@ import { src as project1 } from '../assets/nxmov.png?&format=webp&as=metadata'
 import { src as project3 } from '../assets/realt.png?&format=webp&as=metadata'
 import { src as project2 } from '../assets/rec.png?&format=webp&as=metadata'
 import { src as project8 } from '../assets/vibeVue.png?&format=webp&as=metadata'
-import 'swiper/css'
-import 'swiper/css/pagination'
+// import 'swiper/css'
+// import 'swiper/css/pagination'
 
 export function Project() {
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    waitForAnimate: false,
+  }
+
   const projects = [
     {
       id: 1,
@@ -71,11 +84,7 @@ export function Project() {
     },
   ]
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 2 }}
-    >
+    <div>
       <section id="projects" className="py-16 text-white">
         <div className="text-center">
           <h3 className="text-4xl font-semibold">
@@ -86,8 +95,8 @@ export function Project() {
         </div>
         <br />
         <div className="flex justify-center max-w-7xl gap-6 px-5 mx-auto items-center relative">
-          <div className="lg:w-2/3 w-full">
-            <Swiper
+          <div className="lg:w-2/4 w-full">
+            {/* <Swiper
               slidesperview={1.2}
               spaceBetween={20}
               breakpoints={{
@@ -132,10 +141,42 @@ export function Project() {
                   </div>
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper> */}
+            <div className="slider-container">
+              <Slider {...settings}>
+                {projects.map((project, _index) => (
+                  <div className="p-2" key={project.id}>
+                    <div className="flex flex-col justify-center items-center p-4 mb-4 bg-slate-700 rounded-xl">
+                      <img src={project.img} alt="" className="rounded-lg" />
+                      <h3 className="text-lg my-2">{project.name}</h3>
+                      <div className="flex gap-3">
+                        <a
+                          href={project.github_link}
+                          target="_blank"
+                          className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
+                          rel="noreferrer"
+                        >
+                          Github
+                        </a>
+                        {project.live_link && (
+                          <a
+                            href={project.live_link}
+                            target="_blank"
+                            className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
+                            rel="noreferrer"
+                          >
+                            Live Demo
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   )
 }

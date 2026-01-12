@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
 import { src } from '../assets/me.png?&format=webp&as=metadata'
 import { LogosGitlab } from './techs/Github'
@@ -6,11 +5,7 @@ import { LogosLinkedinIcon } from './techs/Linkedin'
 
 export function Hero() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 1 }}
-    >
+    <div>
       <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
         <div className="flex-1 flex items-center justify-center h-full">
           <img src={src} alt="img" loading="lazy" className="hidden md:block md:max-w-xs h-full mt-6 object-cover rounded-full" />
@@ -59,6 +54,6 @@ export function Hero() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   )
 }

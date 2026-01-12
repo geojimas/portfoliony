@@ -1,13 +1,8 @@
-import { motion } from 'framer-motion'
 import { MaterialIconThemeEmail as Folder } from './techs/Folder.jsx'
 
 export function Contact() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 1 }}
-    >
+    <div>
       <section id="contact" className="py-16 px-3 text-white">
         <div className="text-center mt-8">
           <h3 className="text-4xl font-semibold">
@@ -30,6 +25,6 @@ export function Contact() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   )
 }

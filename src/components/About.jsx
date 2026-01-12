@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Card } from './Card.jsx'
 import { Memorial } from './Memorial.jsx'
 import { ResumeButton } from './ResumeButton.jsx'
@@ -10,11 +9,7 @@ export function About() {
   }, { text: 'Companies Work', count: '2' }]
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 1 }}
-    >
+    <div>
       <section id="about" className="py-16 text-white">
         <div className="text-center mt-8">
           <h3 className="text-4xl font-semibold mb-8">
@@ -64,6 +59,6 @@ export function About() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </div>
   )
 }
