@@ -3,7 +3,7 @@ import { MaterialIconThemeEmail as Folder } from './techs/Folder.jsx'
 export function Contact() {
   return (
     <div>
-      <section id="contact" className="py-16 px-3 text-white">
+      <section id="contact" className="py-8 px-3 text-white">
         <div className="text-center mt-8">
           <h3 className="text-4xl font-semibold">
             Contact
