@@ -1,0 +1,24 @@
+.dot-loader {
+  width: 25px;
+  height: 25px;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  animation: s8 1s infinite;
+  position: relative;
+}
+
+.dot-loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: 2px;
+  background: repeating-conic-gradient(#0df133 0 35deg, #cef010 0 90deg);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #fcf9f9 0);
+  border-radius: 50%;
+}
+
+@keyframes s8 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}

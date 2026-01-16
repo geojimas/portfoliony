@@ -1,4 +1,5 @@
 import { MaterialIconThemeEmail as Folder } from './techs/Folder.jsx'
+import './Contact.css'
 
 export function Contact() {
   return (
@@ -13,7 +14,8 @@ export function Contact() {
           <div className="container flex flex-col max-w-md p-4 mx-auto divide-y rounded-md  bg-sky-950 text-gray-100">
             <div className="flex flex-wrap flex-col justify-center sm:justify-between p-4 border-2  rounded-3xl hover:shadow-lg hover:shadow-yellow-400 transition duration-300">
               <div className="flex justify-center space-x-2 items-center">
-                <span className="text-md font-bold text-white">🟢 Active now</span>
+                <span className="dot-loader"></span>
+                <span className="text-md font-bold text-white">Active now</span>
               </div>
               <div className="flex justify-center items-center p-2 space-y-2">
                 <Folder className="mt-4 mr-4" />
