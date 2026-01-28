@@ -10,9 +10,9 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
-    "framer-motion": "^12.29.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "framer-motion": "^12.29.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-ga4": "^2.1.0",
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.31.0",
@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.2.0",
-    "@eslint-react/eslint-plugin": "^2.7.2",
+    "@eslint-react/eslint-plugin": "^2.7.4",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/react": "^19.2.9",
+    "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "eslint": "^9.39.2",
