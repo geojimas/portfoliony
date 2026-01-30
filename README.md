@@ -1,5 +1,5 @@
-# My New Personal Website
-[![Netlify Status](https://api.netlify.com/api/v1/badges/05fb4d30-9b74-4c82-b9b8-8f12b248dae5/deploy-status)](https://app.netlify.com/sites/jimgeon/deploys)
+# My Personal Website
+
 ## Project Setup
 
 ```sh
