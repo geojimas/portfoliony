@@ -23,7 +23,7 @@ export function About() {
                 <ol>
                   <li>Hi, I&#39;m Dimitris, a Front-End Developer.</li>
                   <li>I have a Bachelor&#39;s degree in Computer Science.</li>
-                  <li>I mainly work with Vue.js, React, Tailwind CSS, and Node.js.</li>
+                  <li>I mainly work with JavaScript, Vue.js, React, Tailwind CSS, and Node.js.</li>
                   <li>You can check out my projects on Github.</li>
                   <li>Also feel free to view my Resume.</li>
                 </ol>
