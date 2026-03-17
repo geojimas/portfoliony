@@ -3,10 +3,20 @@ import { Memorial } from './Memorial.jsx'
 import { ResumeButton } from './ResumeButton.jsx'
 
 export function About() {
-  const info = [{ text: 'Years experience', count: '4' }, {
-    text: 'Completed Projects',
-    count: '8',
-  }, { text: 'Companies Work', count: '2' }]
+  const info = [
+    {
+      text: 'Years experience',
+      count: '4+',
+    },
+    {
+      text: 'Completed Projects',
+      count: '7',
+    },
+    {
+      text: 'Companies Work',
+      count: '2',
+    },
+  ]
 
   return (
     <div>
