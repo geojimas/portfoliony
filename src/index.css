@@ -21,16 +21,7 @@
 html {
   @apply scroll-smooth;
   scroll-padding: 5vmax;
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    'Noto Sans',
-    sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'Original Surfer', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
