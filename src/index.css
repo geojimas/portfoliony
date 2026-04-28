@@ -1,3 +1,4 @@
+@import url(https://fonts.bunny.net/css?family=abeezee:400);
 @import 'tailwindcss';
 
 /*
@@ -21,9 +22,7 @@
 html {
   @apply scroll-smooth;
   scroll-padding: 5vmax;
-  font-family: 'Original Surfer', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'ABeeZee', sans-serif;
 }
 
 body {
