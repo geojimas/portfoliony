@@ -1,13 +1,13 @@
 // import { Autoplay, Pagination } from 'swiper/modules'
 // import { Swiper, SwiperSlide } from 'swiper/react'
 import Slider from 'react-slick'
-import { src as project4 } from '../assets/auth.png?&format=webp&as=metadata'
-import { src as project6 } from '../assets/coupons.png?&format=webp&as=metadata'
-import { src as project5 } from '../assets/lmn.png?&format=webp&as=metadata'
-import { src as project1 } from '../assets/nxmov.png?&format=webp&as=metadata'
-import { src as project3 } from '../assets/realt.png?&format=webp&as=metadata'
-import { src as project2 } from '../assets/rec.png?&format=webp&as=metadata'
-import { src as project7 } from '../assets/vibeVue.png?&format=webp&as=metadata'
+import project4 from '../assets/auth.png?format=webp&as=metadata'
+import project6 from '../assets/coupons.png?format=webp&as=metadata'
+import project5 from '../assets/lmn.png?format=webp&as=metadata'
+import project1 from '../assets/nxmov.png?format=webp&as=metadata'
+import project3 from '../assets/realt.png?format=webp&as=metadata'
+import project2 from '../assets/rec.png?format=webp&as=metadata'
+import project7 from '../assets/vibeVue.png?format=webp&as=metadata'
 // import 'swiper/css'
 // import 'swiper/css/pagination'
 
@@ -139,7 +139,7 @@ export function Project() {
                 {projects.map((project, _index) => (
                   <div className="p-2" key={project.id}>
                     <div className="flex flex-col justify-center items-center p-4 mb-4 bg-slate-700 rounded-xl">
-                      <img src={project.img} alt="" className="rounded-lg" />
+                      <img src={project.img.src} srcSet={project.img.srcset} sizes="(max-width: 768px) 100vw, 567px" width={project.img.width} height={project.img.height} alt={project.name} loading="lazy" decoding="async" className="rounded-lg" />
                       <h3 className="text-lg my-2">{project.name}</h3>
                       <div className="flex gap-3">
                         <a

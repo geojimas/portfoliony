@@ -1,5 +1,5 @@
-import { src as arxnet } from '../assets/arxnet.png?&format=webp&as=metadata'
-import { src as lancom } from '../assets/lancom.png?&format=webp&as=metadata'
+import arxnetLogo from '../assets/arxnet.png?format=webp&as=metadata'
+import lancomLogo from '../assets/lancom.png?format=webp&as=metadata'
 
 export function Memorial() {
   const companies = [
@@ -8,7 +8,7 @@ export function Memorial() {
       name: 'ΑΡΧ ΝΕΤ Α.Ε.',
       period: 'Nov 2021 - Present',
       position: 'Front-End Developer',
-      logo: arxnet,
+      logo: arxnetLogo,
       active: true,
     },
     {
@@ -16,7 +16,7 @@ export function Memorial() {
       name: 'Lancom Ltd',
       period: 'Mar 2021 - Aug 2021',
       position: 'Junior Full Stack Developer',
-      logo: lancom,
+      logo: lancomLogo,
       active: false,
     },
   ]
@@ -33,7 +33,7 @@ export function Memorial() {
               className={`flex flex-col sm:relative sm:before:absolute sm:before:top-4 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-1 ${company.active ? 'before:bg-green-400' : 'before:bg-red-400'}`}
             >
               <div className="flex items-center justify-center">
-                <img src={company.logo} alt="logo" className="rounded-full object-contain bg-white w-20 h-16 mr-2 mb-6" />
+                <img src={company.logo.src} srcSet={company.logo.srcset} sizes="80px" width={company.logo.width} height={company.logo.height} alt="logo" loading="lazy" decoding="async" className="rounded-full object-contain bg-white w-20 h-16 mr-2 mb-6" />
                 <div>
                   <h3 className="text-lg font-semibold tracking-wide">{company.name}</h3>
                   <time className="text-xs tracking-wide uppercase text-gray-300">
