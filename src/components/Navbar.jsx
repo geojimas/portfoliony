@@ -13,11 +13,20 @@ export function Navbar() {
     { id: 5, name: 'CONTACT', link: '#contact' },
   ]
   useEffect(() => {
+    let isScrolling = false
+
     function handleScroll() {
-      setSticky(window.scrollY > 0)
+      if (isScrolling) return
+      isScrolling = true
+
+      requestAnimationFrame(() => {
+        const shouldBeSticky = window.scrollY > 0
+        setSticky(shouldBeSticky)
+        isScrolling = false
+      })
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -42,13 +51,13 @@ export function Navbar() {
             sticky ? 'md:bg-white/0 bg-white' : 'bg-white/90'
           } md:block hidden px-7 py-2 font-medium rounded-bl-full`}
           style={{
-            backgroundColor: sticky ? 'white' : 'transparent',
+            backgroundColor: sticky ? 'white' : 'rgba(255, 255, 255, 0.56)',
             transition: 'background-color 500ms ease-in-out',
           }}
         >
           <ul className="flex items-center gap-1 py-2 text-lg font-bold">
             {menuLinks?.map((menu, _index) => (
-              <li key={menu?.id} className="px-6 hover:text-yellow-500 transition-colors">
+              <li key={menu?.id} className={`px-6 hover:text-yellow-500 transition-colors ${!sticky ? 'text-gray-900' : 'text-gray-900'}`}>
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}
