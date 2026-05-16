@@ -21,7 +21,13 @@
 html {
   @apply scroll-smooth;
   scroll-padding: 5vmax;
-  font-family: 'ABeeZee', sans-serif;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 body {
