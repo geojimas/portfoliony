@@ -1,6 +1,6 @@
 // import { Autoplay, Pagination } from 'swiper/modules'
 // import { Swiper, SwiperSlide } from 'swiper/react'
-import Slider from 'react-slick'
+import SliderComponent from 'react-slick'
 import project4 from '../assets/auth.png?format=webp&as=metadata'
 import project6 from '../assets/coupons.png?format=webp&as=metadata'
 import project5 from '../assets/lmn.png?format=webp&as=metadata'
@@ -8,8 +8,12 @@ import project1 from '../assets/nxmov.png?format=webp&as=metadata'
 import project3 from '../assets/realt.png?format=webp&as=metadata'
 import project2 from '../assets/rec.png?format=webp&as=metadata'
 import project7 from '../assets/vibeVue.png?format=webp&as=metadata'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // import 'swiper/css'
 // import 'swiper/css/pagination'
+
+const Slider = SliderComponent?.default || SliderComponent
 
 export function Project() {
   const settings = {
