@@ -6,7 +6,7 @@ export function About() {
   const info = [
     {
       text: 'Years experience',
-      count: '4+',
+      count: '5',
     },
     {
       text: 'Completed Projects',

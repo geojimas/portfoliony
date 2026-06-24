@@ -16,7 +16,8 @@ export function Navbar() {
     let isScrolling = false
 
     function handleScroll() {
-      if (isScrolling) return
+      if (isScrolling)
+        return
       isScrolling = true
 
       requestAnimationFrame(() => {
