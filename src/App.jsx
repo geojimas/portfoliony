@@ -7,9 +7,6 @@ import { Navbar } from './components/Navbar'
 import { Project } from './components/Project'
 import { Skills } from './components/Skills'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 function App() {
   return (
     <motion.div

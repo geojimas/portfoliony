@@ -1,32 +1,43 @@
-// import { Autoplay, Pagination } from 'swiper/modules'
-// import { Swiper, SwiperSlide } from 'swiper/react'
-import SliderComponent from 'react-slick'
-import project4 from '../assets/auth.png?format=webp&as=metadata'
-import project6 from '../assets/coupons.png?format=webp&as=metadata'
-import project5 from '../assets/lmn.png?format=webp&as=metadata'
-import project1 from '../assets/nxmov.png?format=webp&as=metadata'
-import project3 from '../assets/realt.png?format=webp&as=metadata'
-import project2 from '../assets/rec.png?format=webp&as=metadata'
-import project7 from '../assets/vibeVue.png?format=webp&as=metadata'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-// import 'swiper/css'
-// import 'swiper/css/pagination'
-
-const Slider = SliderComponent?.default || SliderComponent
+import { Autoplay, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import project4 from '../assets/auth.png?w=600&h=300&format=webp&as=metadata'
+import project6 from '../assets/coupons.png?w=600&h=300&format=webp&as=metadata'
+import project5 from '../assets/lmn.png?w=600&h=300&format=webp&as=metadata'
+import project1 from '../assets/nxmov.png?w=600&h=300&format=webp&as=metadata'
+import project3 from '../assets/realt.png?w=600&h=300&format=webp&as=metadata'
+import project2 from '../assets/rec.png?w=600&h=300&format=webp&as=metadata'
+import project7 from '../assets/vibeVue.png?w=600&h=300&format=webp&as=metadata'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export function Project() {
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    fade: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    waitForAnimate: false,
+  const swiperParams = {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    touchRatio: 1,
+    threshold: 12,
+    touchAngle: 45,
+    resistanceRatio: 0.85,
+    grabCursor: false,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    breakpoints: {
+      730: {
+        slidesPerView: 2,
+      },
+      920: {
+        slidesPerView: 3,
+      },
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      clickable: true,
+    },
+    modules: [Pagination, Autoplay],
   }
 
   const projects = [
@@ -91,28 +102,12 @@ export function Project() {
         </div>
         <br />
         <div className="flex justify-center max-w-7xl gap-6 px-5 mx-auto items-center relative">
-          <div className="lg:w-2/4 w-full">
-            {/* <Swiper
-              slidesperview={1.2}
-              spaceBetween={20}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                },
-              }}
-              loop={true}
-              autoplay={{
-                delay: 3000,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination, Autoplay]}
-            >
+          <div className="w-full">
+            <Swiper {...swiperParams}>
               {projects.map((project, _index) => (
                 <SwiperSlide key={project.id}>
                   <div className="p-4 mb-9 bg-slate-700 rounded-xl">
-                    <img src={project.img} alt="" className="rounded-lg" />
+                    <img src={project.img.src} alt="" className="rounded-lg" />
                     <h3 className="text-xl my-2">{project.name}</h3>
                     <div className="flex gap-3">
                       <a
@@ -137,39 +132,7 @@ export function Project() {
                   </div>
                 </SwiperSlide>
               ))}
-            </Swiper> */}
-            <div className="slider-container">
-              <Slider {...settings}>
-                {projects.map((project, _index) => (
-                  <div className="p-2" key={project.id}>
-                    <div className="flex flex-col justify-center items-center p-4 mb-4 bg-slate-700 rounded-xl">
-                      <img src={project.img.src} srcSet={project.img.srcset} sizes="(max-width: 768px) 100vw, 567px" width={project.img.width} height={project.img.height} alt={project.name} loading="lazy" decoding="async" className="rounded-lg" />
-                      <h3 className="text-lg my-2">{project.name}</h3>
-                      <div className="flex gap-3">
-                        <a
-                          href={project.github_link}
-                          target="_blank"
-                          className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
-                          rel="noreferrer"
-                        >
-                          Github
-                        </a>
-                        {project.live_link && (
-                          <a
-                            href={project.live_link}
-                            target="_blank"
-                            className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
-                            rel="noreferrer"
-                          >
-                            Live Demo
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
+            </Swiper>
           </div>
         </div>
       </section>

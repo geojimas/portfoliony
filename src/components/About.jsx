@@ -32,10 +32,10 @@ export function About() {
               <div className="text-gray-300 my-4">
                 <ol>
                   <li>Hi, I&#39;m Dimitris, a Front-End Developer.</li>
-                  <li>I have a Bachelor&#39;s degree in Computer Science.</li>
-                  <li>I mainly work with JavaScript, Vue.js, React, Tailwind CSS, and Node.js.</li>
-                  <li>You can check out my projects on Github.</li>
-                  <li>Also feel free to view my Resume.</li>
+                  <li>I hold a Bachelor&#39;s degree in Computer Science.</li>
+                  <li>I specialize in JavaScript, Vue.js, React, Tailwind CSS, and Node.js.</li>
+                  <li>You can explore my work on GitHub.</li>
+                  <li>Feel free to review my resume as well.</li>
                 </ol>
                 <div className="flex justify-center mt-10 items-center gap-7">
                   {info.map(content => (
