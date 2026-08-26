@@ -35,8 +35,8 @@ export function Navbar() {
   }, [])
   return (
     <nav
-      className={`fixed w-full left-0 top-0 z-999 ${
-        sticky ? 'bg-white  text-gray-900' : 'text-white'
+      className={`fixed w-full left-0 top-0 z-999 transition-colors duration-500 ease-in-out ${
+        sticky ? 'bg-white text-sky-950' : 'text-white'
       }`}
     >
       <div className="flex items-center justify-between">
@@ -48,17 +48,13 @@ export function Navbar() {
           </h4>
         </div>
         <div
-          className={`${
-            sticky ? 'md:bg-white/0 bg-white' : 'bg-white/90'
-          } md:block hidden px-7 py-2 font-medium rounded-bl-full`}
-          style={{
-            backgroundColor: sticky ? 'white' : 'rgba(255, 255, 255, 0.56)',
-            transition: 'background-color 500ms ease-in-out',
-          }}
+          className={`md:block hidden px-7 py-2 font-medium rounded-bl-full transition-colors duration-500 ease-in-out ${
+            sticky ? 'bg-white' : 'bg-white/80'
+          }`}
         >
-          <ul className="flex items-center gap-1 py-2 text-lg font-bold">
+          <ul className="flex items-center gap-1 py-2 text-lg font-bold text-sky-950">
             {menuLinks?.map((menu, _index) => (
-              <li key={menu?.id} className={`px-6 hover:text-yellow-500 transition-colors ${!sticky ? 'text-gray-900' : 'text-gray-900'}`}>
+              <li key={menu?.id} className="px-6 hover:text-yellow-500 transition-colors duration-500">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
             ))}
@@ -66,17 +62,18 @@ export function Navbar() {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-999  ${
-            sticky && open ? 'text-gray-900' : 'text-gray-600'
-          } text-3xl md:hidden m-5`}
+          className={`z-999 text-3xl md:hidden m-5 transition-colors duration-500 ${
+            sticky && open ? 'text-sky-950' : 'text-white'
+          }`}
         >
-          <div className="cursor-pointer hover:scale-110 transition duration-300">
+          <div className="cursor-pointer hover:scale-110 transition-transform duration-300">
             {open ? <CloseMenu /> : <MaterialSymbolsMenu color={sticky ? 'black' : 'white'} />}
           </div>
         </div>
         <div
-          className={`md:hidden text-gray-900 absolute w-2/3 h-screen
-      px-7 py-2 font-medium bg-white top-0 duration-300 ${open ? 'right-0' : '-right-full'}`}
+          className={`md:hidden absolute w-2/3 h-screen px-7 py-2 font-medium bg-white top-0 transition-all duration-300 ease-in-out ${
+            open ? 'right-0' : '-right-full'
+          }`}
         >
           <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
             {menuLinks?.map((menu, _index) => (
