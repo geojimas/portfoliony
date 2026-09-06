@@ -1,4 +1,5 @@
 import './card.css'
+import PropTypes from 'prop-types'
 
 export function Card({ children }) {
   return (
@@ -12,4 +13,8 @@ export function Card({ children }) {
       </div>
     </div>
   )
+}
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
 }

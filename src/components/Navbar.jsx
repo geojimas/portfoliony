@@ -53,7 +53,7 @@ export function Navbar() {
           }`}
         >
           <ul className="flex items-center gap-1 py-2 text-lg font-bold text-sky-950">
-            {menuLinks?.map((menu, _index) => (
+            {menuLinks?.map(menu => (
               <li key={menu?.id} className="px-6 hover:text-yellow-500 transition-colors duration-500">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>
@@ -76,7 +76,7 @@ export function Navbar() {
           }`}
         >
           <ul className="flex flex-col justify-center h-full gap-10 py-2 text-xl font-bold">
-            {menuLinks?.map((menu, _index) => (
+            {menuLinks?.map(menu => (
               <li onClick={() => setOpen(false)} key={menu?.id} className="px-6">
                 <a href={menu?.link}>{menu?.name}</a>
               </li>

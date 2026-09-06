@@ -1,4 +1,5 @@
 import './ResumeButton.css'
+import PropTypes from 'prop-types'
 
 export function ResumeButton(props) {
   return (
@@ -9,4 +10,8 @@ export function ResumeButton(props) {
       <span className="button-text">{props.text}</span>
     </button>
   )
+}
+
+ResumeButton.propTypes = {
+  text: PropTypes.string.isRequired,
 }

@@ -1,18 +1,48 @@
-import antfu from '@antfu/eslint-config'
+import js from '@eslint/js'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import globals from 'globals'
 
-export default antfu(
+export default [
   {
-    javascript: true,
-    react: true,
-    formatters: {
-      css: true,
-      html: true,
+    ignores: ['dist', 'node_modules'],
+  },
+  js.configs.recommended,
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+      },
     },
-    // Parse the `.gitignore` file to get the ignores, on by default
-    gitignore: true,
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs['recommended-latest'].rules,
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+    },
   },
-  {
-    // Remember to specify the file glob here, otherwise it might cause the vue plugin to handle non-vue files
-    files: ['**/*.js'],
-  },
-)
+]

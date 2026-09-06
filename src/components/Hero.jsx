@@ -19,7 +19,7 @@ export function Hero() {
               </span>
               <span>
                 <Typewriter
-                  words={["Hi, I’m Dimitris Georgiadis"]}
+                  words={['Hi, I’m Dimitris Georgiadis']}
                   typeSpeed={130}
                   delaySpeed={1000}
                   cursor={true}

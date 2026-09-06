@@ -104,7 +104,7 @@ export function Project() {
         <div className="flex justify-center max-w-7xl gap-6 px-5 mx-auto items-center relative">
           <div className="w-full">
             <Swiper {...swiperParams}>
-              {projects.map((project, _index) => (
+              {projects.map(project => (
                 <SwiperSlide key={project.id}>
                   <div className="p-4 mb-9 bg-slate-700 rounded-xl">
                     <img src={project.img.src} alt="" className="rounded-lg" />
