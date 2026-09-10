@@ -5,6 +5,8 @@ import { CloseMenu } from './techs/CloseMenu'
 export function Navbar() {
   const [sticky, setSticky] = useState(false)
   const [open, setOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState('#home')
+
   const menuLinks = [
     { id: 1, name: 'HOME', link: '#home' },
     { id: 2, name: 'ABOUT', link: '#about' },
@@ -12,6 +14,17 @@ export function Navbar() {
     { id: 4, name: 'PROJECTS', link: '#projects' },
     { id: 5, name: 'CONTACT', link: '#contact' },
   ]
+
+  useEffect(() => {
+    const updateActiveLink = () => setActiveLink(window.location.hash || '#home')
+
+    updateActiveLink()
+    window.addEventListener('hashchange', updateActiveLink)
+
+    return () => {
+      window.removeEventListener('hashchange', updateActiveLink)
+    }
+  }, [])
   useEffect(() => {
     let isScrolling = false
 
@@ -60,7 +73,12 @@ export function Navbar() {
               >
                 <a
                   href={menu?.link}
-                  className="block rounded-full px-5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-linear-to-r hover:from-yellow-300/30 hover:to-sky-400/20 hover:text-yellow-500 hover:shadow-[0_8px_20px_rgba(14,116,144,0.12)] active:scale-95"
+                  onClick={() => setActiveLink(menu?.link)}
+                  className={`block rounded-full px-5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-linear-to-r hover:from-yellow-300/30 hover:to-sky-400/20 hover:text-yellow-600 hover:shadow-lg hover:shadow-sky-100 active:scale-95 ${
+                    activeLink === menu?.link
+                      ? 'underline decoration-2 decoration-yellow-500 underline-offset-8 text-yellow-600'
+                      : ''
+                  }`}
                 >
                   {menu?.name}
                 </a>
@@ -98,7 +116,12 @@ export function Navbar() {
               >
                 <a
                   href={menu?.link}
-                  className="block rounded-2xl border border-sky-100 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-linear-to-r hover:from-yellow-100 hover:to-sky-100 hover:text-yellow-500 hover:shadow-[0_10px_25px_rgba(14,116,144,0.12)] active:scale-95"
+                  onClick={() => setActiveLink(menu?.link)}
+                  className={`block rounded-2xl border px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-linear-to-r hover:from-yellow-100 hover:to-sky-100 hover:text-yellow-600 hover:shadow-xl hover:shadow-sky-100 active:scale-95 ${
+                    activeLink === menu?.link
+                      ? 'border-yellow-400 bg-linear-to-r from-yellow-100 to-sky-100 text-yellow-600 underline decoration-2 decoration-yellow-500 underline-offset-8'
+                      : 'border-sky-100 bg-white'
+                  }`}
                 >
                   {menu?.name}
                 </a>
