@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { LogosDocker } from './techs/Docker.jsx'
 // import { LogosNodejsIcon } from './techs/Node'
 import { LogosGitIcon } from './techs/Git'
@@ -21,49 +21,56 @@ const logos = [
   { component: <LogosGitIcon />, key: 'git' },
 ]
 
-const cardVariants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: { duration: 0.7, ease: 'easeOut' },
-  },
-}
-
-const listVariants = {
-  initial: {},
-  animate: { transition: { staggerChildren: 0.08 } },
-}
-
 export function Skills() {
+  const skillsRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const section = skillsRef.current
+    if (!section)
+      return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true)
+        observer.disconnect()
+      }
+    }, { threshold: 0.2 })
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="skills" className="py-4 pb-16 mb-10 bg-gray-800 rounded-3xl relative">
+    <section id="skills" className="py-4 pb-16 mb-10 bg-gray-800 rounded-3xl relative lg:mb-40">
       <div className="mt-8 text-gray-100 text-center">
-        <h3 className="text-4xl font-semibold mb-6">
-          My
-          {' '}
-          <span className="text-yellow-400">Skills</span>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400">
+          What I work with
+        </p>
+        <h3 id="skills-title" className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Skills
         </h3>
-        <motion.div
+        <div
+          ref={skillsRef}
           className="flex items-center justify-center mt-12 gap-10 flex-wrap"
-          variants={listVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
         >
-          {logos.map(logo => (
-            <motion.div
+          {logos.map((logo, index) => (
+            <div
               key={logo.key}
-              variants={cardVariants}
-              className="border-2 group transition-all border-yellow-600 relative min-w-40 max-w-[16rem] bg-gray-900 p-10 rounded-xl hover:scale-105 cursor-pointer hover:shadow-lg hover:shadow-yellow-400/70"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transition: `opacity 700ms ease-out ${isVisible ? index * 80 : 0}ms, transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, border-color 350ms ease`,
+              }}
+              className="group relative min-w-40 max-w-[16rem] rounded-xl border border-yellow-600 bg-gray-900 p-10 hover:scale-105 hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/50"
             >
               <div className="w-18 h-16 flex items-center justify-center rounded-full">
-                <div className="text-6xl w-16 h-16 rounded-full flex items-center justify-center">
+                <div className="text-6xl w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
                   {logo.component}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -31,8 +31,9 @@ export function Project() {
     },
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 4500,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       clickable: true,
@@ -92,44 +93,68 @@ export function Project() {
   ]
   return (
     <div>
-      <section id="projects" className="py-16 text-white">
-        <div className="text-center">
-          <h3 className="text-4xl font-semibold">
-            My
-            {' '}
-            <span className="text-yellow-400">Projects</span>
-          </h3>
+      <section id="projects" aria-labelledby="projects-title" className="px-4 py-20 text-white sm:px-6 lg:pb-44">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400">
+                Selected work
+              </p>
+              <h3 id="projects-title" className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                Projects
+              </h3>
+            </div>
+            <p className="max-w-md text-base leading-7 text-slate-300">
+              A collection of things I’ve built, from web apps to APIs.
+            </p>
+          </div>
         </div>
-        <br />
-        <div className="flex justify-center max-w-7xl gap-6 px-5 mx-auto items-center relative">
+        <div className="relative mx-auto max-w-7xl">
           <div className="w-full">
-            <Swiper {...swiperParams}>
+            <Swiper className="pt-4" {...swiperParams}>
               {projects.map(project => (
                 <SwiperSlide key={project.id}>
-                  <div className="p-4 mb-9 bg-slate-700 rounded-xl">
-                    <img src={project.img.src} alt="" className="rounded-lg" />
-                    <h3 className="text-xl my-2">{project.name}</h3>
-                    <div className="flex gap-3">
-                      <a
-                        href={project.github_link}
-                        target="_blank"
-                        className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
-                        rel="noreferrer"
-                      >
-                        Github
-                      </a>
-                      {project.live_link && (
-                        <a
-                          href={project.live_link}
-                          target="_blank"
-                          className="text-white hover:underline bg-gray-800 px-2 py-1 inline-block cursor-pointer rounded-md"
-                          rel="noreferrer"
-                        >
-                          Live Demo
-                        </a>
-                      )}
+                  <article className="mb-10 flex h-full min-h-[22rem] flex-col overflow-hidden rounded-2xl bg-gray-800 shadow-lg shadow-black/10 transition-[transform,box-shadow] duration-300 ease-out hover:z-10 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-400/20 motion-reduce:transform-none motion-reduce:transition-none">
+                    <div className="relative overflow-hidden bg-slate-800">
+                      <img
+                        src={project.img.src}
+                        srcSet={project.img.srcset}
+                        sizes="(max-width: 729px) calc(100vw - 2rem), (max-width: 919px) 50vw, 33vw"
+                        width={project.img.width}
+                        height={project.img.height}
+                        alt={`${project.name} preview`}
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-[16/9] w-full object-cover"
+                      />
                     </div>
-                  </div>
+                    <div className="flex flex-1 flex-col p-5 sm:p-6">
+                      <h4 className="text-xl font-semibold leading-7 text-white">
+                        {project.name}
+                      </h4>
+                      <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                        <a
+                          href={project.github_link}
+                          target="_blank"
+                          className="inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-sm font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+                          rel="noopener noreferrer"
+                        >
+                          Source code
+                        </a>
+                        {project.live_link && (
+                          <a
+                            href={project.live_link}
+                            target="_blank"
+                            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-yellow-400 px-5 text-sm font-semibold text-slate-950 transition-colors hover:bg-yellow-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+                            rel="noopener noreferrer"
+                          >
+                            Live preview
+                            <span aria-hidden="true">↗</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </article>
                 </SwiperSlide>
               ))}
             </Swiper>

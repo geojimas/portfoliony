@@ -1,32 +1,38 @@
-import { MaterialIconThemeEmail as Folder } from './techs/Folder.jsx'
-import './Contact.css'
+import { MaterialIconThemeEmail as EmailIcon } from './techs/Folder.jsx'
 
 export function Contact() {
   return (
-    <div>
-      <section id="contact" className="py-8 px-3 text-white">
-        <div className="text-center mt-8">
-          <h3 className="text-4xl font-semibold">
-            Contact
-            {' '}
-            <span className="text-yellow-400">Me</span>
-          </h3>
-          <div className="container flex flex-col max-w-md p-4 mx-auto divide-y rounded-md  bg-sky-950 text-gray-100">
-            <div className="flex flex-wrap flex-col justify-center sm:justify-between p-4 border-2  rounded-3xl hover:shadow-lg hover:shadow-yellow-400 transition duration-300">
-              <div className="flex justify-center space-x-2 items-center">
-                <span className="dot-loader"></span>
-                <span className="text-md font-bold text-white">Active now</span>
-              </div>
-              <div className="flex justify-center items-center p-2 space-y-2">
-                <Folder className="mt-4 mr-4" />
-                <div className="lg:text-xl font-bold text-white tracking-wider decoration-yellow-400 underline underline-offset-8">
+    <section id="contact" aria-labelledby="contact-title" className="px-4 py-16 text-white sm:py-20">
+      <div className="mx-auto max-w-3xl text-center">
+        <h3 id="contact-title" className="text-4xl font-semibold tracking-tight sm:text-5xl">
+          Get in touch
+        </h3>
+        <p className="mx-auto mt-4 max-w-xl text-gray-300">
+          Have a project in mind or want to connect? I’d love to hear from you.
+        </p>
+        <div className="mt-10 rounded-2xl border border-white/10 bg-gray-800 p-6 shadow-xl shadow-black/10 sm:p-8">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex items-center gap-4">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-yellow-400/10">
+                <EmailIcon aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-sm font-medium text-gray-400">Email me</p>
+                <a
+                  className="mt-1 inline-block break-all text-base font-semibold text-white underline decoration-yellow-400/70 underline-offset-4 transition-colors hover:text-yellow-300 sm:text-lg"
+                  href="mailto:georgiadis8636@gmail.com"
+                >
                   georgiadis8636@gmail.com
-                </div>
+                </a>
               </div>
+            </div>
+            <div className="flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-sm font-medium text-emerald-300">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              Available for opportunities
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

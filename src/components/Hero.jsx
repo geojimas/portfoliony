@@ -8,7 +8,7 @@ export function Hero() {
     <div>
       <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
         <div className="flex-1 flex items-center justify-center h-full">
-          <img src={meImage.src} srcSet={meImage.srcset} sizes="(max-width: 768px) 100vw, 320px" width={meImage.width} height={meImage.height} alt="Dimitris Georgiadis" loading="lazy" decoding="async" className="hidden md:block md:max-w-xs h-full mt-6 object-cover rounded-full" />
+          <img src={meImage.src} srcSet={meImage.srcset} sizes="(max-width: 768px) 100vw, 320px" width={meImage.width} height={meImage.height} alt="Dimitris Georgiadis" loading="eager" fetchPriority="high" decoding="async" className="hidden md:block md:max-w-xs h-full mt-6 object-cover rounded-full" />
         </div>
         <div className="flex-1">
           <div className="md:text-left text-center">

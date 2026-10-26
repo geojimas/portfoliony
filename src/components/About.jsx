@@ -20,14 +20,15 @@ export function About() {
 
   return (
     <div>
-      <section id="about" className="py-16 text-white">
+      <section id="about" className="pb-4 pt-16 text-white md:py-16 lg:pb-40">
         <div className="text-center mt-8">
-          <h3 className="text-4xl font-semibold mb-8">
-            About
-            {' '}
-            <span className="text-yellow-400">Me</span>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400">
+            A little
+          </p>
+          <h3 id="about-title" className="mb-5 text-4xl font-semibold tracking-tight md:mb-8 sm:text-5xl">
+            About me
           </h3>
-          <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
+          <div className="flex flex-col items-center gap-8 px-5 mx-auto max-w-6xl md:flex-row md:gap-6 md:px-10">
             <div className="p-2">
               <div className="text-gray-300 my-4">
                 <ol>
@@ -60,7 +61,7 @@ export function About() {
               </div>
             </div>
             <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
-              <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm hover:scale-105">
+              <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm">
                 <Card>
                   <Memorial />
                 </Card>

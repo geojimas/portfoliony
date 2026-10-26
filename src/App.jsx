@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -9,11 +8,7 @@ import { Skills } from './components/Skills'
 
 function App() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: 'easeIn', duration: 1 }}
-    >
+    <div className="app-fade-in">
       <Navbar />
       <Hero />
       <About />
@@ -21,7 +16,7 @@ function App() {
       <Project />
       <Contact />
       <Footer />
-    </motion.div>
+    </div>
   )
 }
 

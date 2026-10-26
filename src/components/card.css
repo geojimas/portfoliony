@@ -1,21 +1,26 @@
 .card {
-  overflow: visible;
-  width: 330px;
+  width: min(100%, 330px);
   height: 310px;
+  margin-inline: auto;
 }
 
 .content {
+  position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 300ms;
-  box-shadow: 0 0 10px 1px #000000ee;
-  border-radius: 5px;
+  border-radius: 1rem;
+  transition: box-shadow 250ms ease;
+}
+
+@media (hover: hover) {
+  .card:hover .content {
+    box-shadow: 0 10px 24px rgb(0 0 0 / 20%), 0 0 16px rgb(250 205 21 / 8%);
+  }
 }
 
 .back {
-  background-color: #151515;
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -23,54 +28,59 @@
   align-items: center;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: 5px;
+  border-radius: 1rem;
   overflow: hidden;
+  isolation: isolate;
+  background-color: #111827;
 }
 
 .back::before {
   position: absolute;
-  content: ' ';
+  z-index: 0;
+  content: '';
   display: block;
-  width: 160px;
-  height: 160%;
-  background: linear-gradient(90deg, transparent, #facd15, #eff0e6, #eff0e6, #facd15, transparent);
-  animation: rotation_481 6000ms infinite linear;
+  inset: -35%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 30%,
+    #facd15 40%,
+    #eff0e6 50%,
+    #facd15 60%,
+    transparent 70% 100%
+  );
+  animation: card-border-rotation 6s linear infinite;
 }
 
 .back-content {
   position: absolute;
-  width: 99%;
-  height: 99%;
+  z-index: 1;
+  inset: 2px;
   background-color: #111827;
-  border-radius: 5px;
+  border-radius: calc(1rem - 2px);
   color: #eff0e6;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  overflow: hidden;
 }
 
-@keyframes rotation_481 {
+@keyframes card-border-rotation {
   0% {
-    transform: rotateZ(0deg);
-  }
-
-  0% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(10px);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    transition: none;
+  }
+
+  .back::before {
+    animation: none;
   }
 }

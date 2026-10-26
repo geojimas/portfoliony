@@ -61,23 +61,20 @@ export function Navbar() {
           </h4>
         </div>
         <div
-          className={`md:block hidden px-7 py-2 font-medium rounded-bl-full transition-colors duration-500 ease-in-out ${
+          className={`lg:block hidden px-7 py-2 font-medium rounded-bl-full transition-colors duration-500 ease-in-out ${
             sticky ? 'bg-white' : 'bg-white/80'
           }`}
         >
           <ul className="flex items-center gap-1 py-2 text-lg font-bold text-sky-950">
             {menuLinks?.map(menu => (
-              <li
-                key={menu?.id}
-                className="px-2 transition-all duration-300"
-              >
+              <li key={menu?.id}>
                 <a
                   href={menu?.link}
                   onClick={() => setActiveLink(menu?.link)}
-                  className={`block rounded-full px-5 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:bg-linear-to-r hover:from-yellow-300/30 hover:to-sky-400/20 hover:text-yellow-600 hover:shadow-lg hover:shadow-sky-100 active:scale-95 ${
+                  className={`block rounded-full px-5 py-2 ${
                     activeLink === menu?.link
-                      ? 'underline decoration-2 decoration-yellow-500 underline-offset-8 text-yellow-600'
-                      : ''
+                      ? 'bg-sky-950 text-white'
+                      : 'hover:bg-sky-200 hover:text-sky-950'
                   }`}
                 >
                   {menu?.name}
@@ -88,7 +85,7 @@ export function Navbar() {
         </div>
         <div
           onClick={() => setOpen(!open)}
-          className={`z-999 text-3xl md:hidden m-5 transition-colors duration-500 ${
+          className={`z-999 text-3xl lg:hidden m-5 transition-colors duration-500 ${
             open || sticky ? 'text-sky-950' : 'text-white'
           }`}
         >
@@ -103,24 +100,23 @@ export function Navbar() {
           </div>
         </div>
         <div
-          className={`md:hidden absolute w-2/3 h-screen px-7 py-2 font-medium bg-slate-50/95 text-sky-950 top-0 border-l border-slate-200 shadow-2xl backdrop-blur-sm transition-all duration-300 ease-in-out ${
+          className={`lg:hidden absolute w-2/3 h-screen px-7 py-2 font-medium bg-slate-50/95 text-sky-950 top-0 border-l border-slate-200 shadow-2xl backdrop-blur-sm transition-all duration-300 ease-in-out ${
             open ? 'right-0' : '-right-full'
           }`}
         >
-          <ul className="flex flex-col justify-center h-full gap-4 py-2 text-xl font-bold">
+          <ul className="flex flex-col justify-center h-full gap-4 py-2 text-center text-xl font-bold">
             {menuLinks?.map(menu => (
               <li
                 onClick={() => setOpen(false)}
                 key={menu?.id}
-                className="px-2"
               >
                 <a
                   href={menu?.link}
                   onClick={() => setActiveLink(menu?.link)}
-                  className={`block rounded-2xl border px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-linear-to-r hover:from-yellow-100 hover:to-sky-100 hover:text-yellow-600 hover:shadow-xl hover:shadow-sky-100 active:scale-95 ${
+                  className={`block rounded-xl px-5 py-3 ${
                     activeLink === menu?.link
-                      ? 'border-yellow-400 bg-linear-to-r from-yellow-100 to-sky-100 text-yellow-600 underline decoration-2 decoration-yellow-500 underline-offset-8'
-                      : 'border-sky-100 bg-white'
+                      ? 'bg-sky-950 text-white'
+                      : 'text-sky-950 hover:bg-sky-200 hover:text-sky-950'
                   }`}
                 >
                   {menu?.name}

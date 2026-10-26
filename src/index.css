@@ -34,6 +34,20 @@ body {
   @apply box-border bg-sky-950 text-gray-100;
 }
 
+@keyframes app-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.app-fade-in {
+  animation: app-fade-in 1s ease-in both;
+}
+
 .aboutImg::after {
   @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-800 -z-10;
 }
@@ -41,4 +55,9 @@ body {
 .swiper-pagination-bullet {
   @apply bg-white;
   margin-top: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-yellow-400;
+  opacity: 1;
 }
