@@ -31,7 +31,7 @@ export function Project() {
     },
     loop: true,
     autoplay: {
-      delay: 4500,
+      delay: 3000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
