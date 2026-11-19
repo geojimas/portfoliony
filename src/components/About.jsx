@@ -11,6 +11,12 @@ export function About() {
             <p className="max-w-[62ch] text-[1.0625rem] leading-[1.75]">
               I&#39;m Dimitris, a front-end developer based in Greece. I build web interfaces for two companies, mainly with JavaScript, Vue, and Tailwind CSS.
             </p>
+            <ul className="mt-5 max-w-[62ch] list-disc space-y-1.5 pl-5 text-[1.0625rem] leading-[1.6] marker:text-sea/70">
+              <li>Translate UX/UI designs into production code.</li>
+              <li>Maintain complex cross-platform projects across devices.</li>
+              <li>Test rigorously for performance and reliability.</li>
+              <li>Work in Agile teams and with Micro Frontends.</li>
+            </ul>
             <div className="mt-10">
               <Memorial />
             </div>
