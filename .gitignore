@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+skills-lock.json
 
 node_modules
 pnpm-lock.yaml
@@ -15,6 +16,7 @@ dist-ssr
 
 # Editor directories and files
 .vscode/*
+.agents
 !.vscode/extensions.json
 .idea
 .DS_Store

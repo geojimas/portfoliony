@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 export function MaterialSymbolsMenu(props) {
   return (
     <svg
@@ -16,8 +14,4 @@ export function MaterialSymbolsMenu(props) {
       </path>
     </svg>
   )
-}
-
-MaterialSymbolsMenu.propTypes = {
-  color: PropTypes.string,
 }

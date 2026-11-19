@@ -1,52 +1,52 @@
-import arxnetLogo from '../assets/arxnet.png?format=webp&as=metadata'
-import lancomLogo from '../assets/lancom.png?format=webp&as=metadata'
+const careerStart = { year: 2021, month: 2 } // March 2021
+
+function yearsOfExperience() {
+  const now = new Date()
+  const months
+    = (now.getFullYear() - careerStart.year) * 12 + (now.getMonth() - careerStart.month)
+
+  return Math.max(1, Math.floor(months / 12))
+}
 
 export function Memorial() {
   const companies = [
     {
       id: 1,
       name: 'ΑΡΧ ΝΕΤ Α.Ε.',
-      period: 'Nov 2021 - Present',
-      position: 'Front-End Developer',
-      logo: arxnetLogo,
-      active: true,
+      period: 'Nov 2021 to now',
+      position: 'Front-end developer',
     },
     {
       id: 2,
       name: 'Lancom Ltd',
-      period: 'Mar 2021 - Aug 2021',
-      position: 'Junior Full Stack Developer',
-      logo: lancomLogo,
-      active: false,
+      period: 'Mar 2021 to Aug 2021',
+      position: 'Junior full-stack developer',
     },
   ]
 
   return (
-    <div className="container transition-all max-w-5xl px-4 py-12 mx-auto">
-      <div className="relative mx-4 col-span-12 px-4 space-y-6 sm:col-span-9">
-        <div
-          className="col-span-12 space-y-12 relative sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-500"
-        >
-          { companies.map(company => (
-            <div
-              key={company.id}
-              className={`flex flex-col sm:relative sm:before:absolute sm:before:top-4 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-1 ${company.active ? 'before:bg-green-400' : 'before:bg-red-400'}`}
-            >
-              <div className="flex items-center justify-center">
-                <img src={company.logo.src} srcSet={company.logo.srcset} sizes="80px" width={company.logo.width} height={company.logo.height} alt="logo" loading="lazy" decoding="async" className="rounded-full object-contain bg-white w-20 h-16 mr-2 mb-6" />
-                <div>
-                  <h3 className="text-lg font-semibold tracking-wide">{company.name}</h3>
-                  <time className="text-xs tracking-wide uppercase text-gray-300">
-                    {company.period}
-                  </time>
-                  <p className="mt-2">{company.position}</p>
-                </div>
-              </div>
-            </div>
-
-          ))}
-        </div>
+    <div>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h3 className="text-sm font-semibold">Experience</h3>
+        <p className="text-sm text-muted">
+          <span className="font-semibold text-ink">{yearsOfExperience()}+</span>
+          {' years'}
+        </p>
       </div>
+      <ul className="mt-3">
+        {companies.map(company => (
+          <li
+            key={company.id}
+            className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-line py-3"
+          >
+            <div>
+              <p className="font-medium">{company.name}</p>
+              <p className="text-sm text-muted">{company.position}</p>
+            </div>
+            <p className="text-sm tabular-nums text-muted">{company.period}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

@@ -8,13 +8,16 @@ import { Skills } from './components/Skills'
 
 function App() {
   return (
-    <div className="app-fade-in">
+    <div className="min-h-screen">
+      <a className="skip-link" href="#main">Skip to content</a>
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Project />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <About />
+        <Skills />
+        <Project />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

@@ -1,59 +1,52 @@
-import { Typewriter } from 'react-simple-typewriter'
-import meImage from '../assets/me.png?format=webp&as=metadata'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 
 export function Hero() {
   return (
-    <div>
-      <section id="home" className="min-h-screen flex py-10 md:flex-row flex-col items-center">
-        <div className="flex-1 flex items-center justify-center h-full">
-          <img src={meImage.src} srcSet={meImage.srcset} sizes="(max-width: 768px) 100vw, 320px" width={meImage.width} height={meImage.height} alt="Dimitris Georgiadis" loading="eager" fetchPriority="high" decoding="async" className="hidden md:block md:max-w-xs h-full mt-6 object-cover rounded-full" />
-        </div>
-        <div className="flex-1">
-          <div className="md:text-left text-center">
-            <h1 className="md:text-5xl text-2xl md:leading-normal leading-10 text-white mt-5 font-bold">
-              <span className="text-yellow-400 md:text-6xl text-5xl">
-                Hello!
-                <br />
-              </span>
-              <span>
-                <Typewriter
-                  words={['Hi, I’m Dimitris Georgiadis']}
-                  typeSpeed={130}
-                  delaySpeed={1000}
-                  cursor={true}
-                  cursorStyle="_"
-                  cursorBlinking={true}
-                />
-              </span>
-            </h1>
-            <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-white">
-              <span className="text-yellow-400">Front-End</span>
-              {' '}
-              Developer
-            </h4>
-            <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
-              <a
-                href="https://github.com/geojimas"
-                target="_blank"
-                className="hover:scale-125 cursor-pointer transition-all"
-                rel="noreferrer"
-              >
-                <LogosGitlab />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa/"
-                target="_blank"
-                className="hover:scale-125 cursor-pointer transition-all"
-                rel="noreferrer"
-              >
-                <LogosLinkedinIcon />
-              </a>
-            </div>
+    <section id="home">
+      <div className="shell pt-28 pb-14 md:pt-32 md:pb-16">
+        <div className="hero-rise">
+          <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold leading-[0.95] tracking-[-0.035em] [font-stretch:112%]">
+            <span className="block">Dimitris</span>
+            <span className="block">Georgiadis</span>
+          </h1>
+          <p className="mt-6 max-w-[46ch] text-pretty text-lg leading-[1.6] text-muted md:text-xl">
+            Front-end developer in Greece. I build interfaces with Vue and TypeScript that stay fast and easy to maintain.
+          </p>
+          <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+            <span className="rounded-[3px] bg-marker px-1.5 py-0.5 font-semibold text-ink">Available for work</span>
+            <span className="text-muted">Open to front-end roles.</span>
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a
+              className="inline-flex h-11 items-center rounded-md bg-sea px-5 text-sm font-semibold text-paper transition-colors hover:bg-sea-deep"
+              href="https://app.enhancv.com/share/9f7135a3/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
+            <a
+              className="group inline-flex items-center gap-1.5 text-sm font-medium"
+              href="https://github.com/geojimas"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LogosGitlab aria-hidden="true" className="size-4" />
+              <span className="underline decoration-line underline-offset-4 transition-colors group-hover:decoration-sea">GitHub</span>
+            </a>
+            <a
+              className="group inline-flex items-center gap-1.5 text-sm font-medium"
+              href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LogosLinkedinIcon aria-hidden="true" className="size-4" />
+              <span className="underline decoration-line underline-offset-4 transition-colors group-hover:decoration-sea">LinkedIn</span>
+            </a>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

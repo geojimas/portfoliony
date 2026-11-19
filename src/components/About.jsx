@@ -1,75 +1,45 @@
-import { Card } from './Card.jsx'
 import { Memorial } from './Memorial.jsx'
-import { ResumeButton } from './ResumeButton.jsx'
+import meImage from '../assets/me.png?format=webp&as=metadata'
 
 export function About() {
-  const info = [
-    {
-      text: 'Years experience',
-      count: '5',
-    },
-    {
-      text: 'Completed Projects',
-      count: '7',
-    },
-    {
-      text: 'Companies Work',
-      count: '2',
-    },
-  ]
-
   return (
-    <div>
-      <section id="about" className="pb-4 pt-16 text-white md:py-16 lg:pb-40">
-        <div className="text-center mt-8">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400">
-            A little
-          </p>
-          <h3 id="about-title" className="mb-5 text-4xl font-semibold tracking-tight md:mb-8 sm:text-5xl">
-            About me
-          </h3>
-          <div className="flex flex-col items-center gap-8 px-5 mx-auto max-w-6xl md:flex-row md:gap-6 md:px-10">
-            <div className="p-2">
-              <div className="text-gray-300 my-4">
-                <ol>
-                  <li>Hi, I&#39;m Dimitris, a Front-End Developer.</li>
-                  <li>I hold a Bachelor&#39;s degree in Computer Science.</li>
-                  <li>I specialize in JavaScript, Vue.js, React, Tailwind CSS, and Node.js.</li>
-                  <li>You can explore my work on GitHub.</li>
-                  <li>Feel free to review my resume as well.</li>
-                </ol>
-                <div className="flex justify-center mt-10 items-center gap-7">
-                  {info.map(content => (
-                    <div key={content.text}>
-                      <h3 className="md:text-4xl text-2xl font-semibold text-yellow-400">
-                        {content.count}
-                      </h3>
-                      <span className="md:text-base text-xs">{content.text}</span>
-                    </div>
-                  ))}
-                </div>
-                <br />
-                <div className="flex justify-center">
-                  <a
-                    target="_blank"
-                    href="https://app.enhancv.com/share/9f7135a3/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
-                    rel="noreferrer"
-                  >
-                    <ResumeButton text="Resume" />
-                  </a>
-                </div>
-              </div>
+    <section id="about" className="section">
+      <div className="shell">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">About</h2>
+        <div className="mt-8 grid gap-12 md:grid-cols-[minmax(0,1fr)_16rem] md:gap-16">
+          <div>
+            <p className="max-w-[62ch] text-[1.0625rem] leading-[1.75]">
+              I&#39;m Dimitris, a front-end developer based in Greece. I build web interfaces for two companies, mainly with JavaScript, Vue, and Tailwind CSS.
+            </p>
+            <div className="mt-10">
+              <Memorial />
             </div>
-            <div className="flex-1 md:mt-0 mt-6 flex justify-center items-center">
-              <div className="lg:w-96 h-full relative sm:w-10/12 w-11/12 max-w-sm">
-                <Card>
-                  <Memorial />
-                </Card>
-              </div>
-            </div>
+            <p className="mt-6 text-sm">
+              <a
+                className="font-medium underline decoration-line underline-offset-4 transition-colors hover:decoration-sea"
+                href="https://app.enhancv.com/share/9f7135a3/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View my resume
+              </a>
+            </p>
+          </div>
+          <div className="md:pt-1">
+            <img
+              src={meImage.src}
+              srcSet={meImage.srcset}
+              sizes="(max-width: 768px) 70vw, 256px"
+              width={meImage.width}
+              height={meImage.height}
+              alt="Dimitris Georgiadis"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/5] w-full max-w-[16rem] rounded-md border border-line object-cover"
+            />
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
