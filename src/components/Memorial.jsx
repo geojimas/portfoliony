@@ -40,22 +40,21 @@ export function Memorial() {
       </div>
       <ul className="mt-3">
         {companies.map(company => (
-          <li
-            key={company.id}
-            className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-line py-3"
-          >
-            <div className="flex items-center gap-3">
+          <li key={company.id} className="border-t border-line py-3">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <img
                 src={company.logo}
                 alt=""
                 className="h-4 w-16 shrink-0 object-contain object-left mix-blend-multiply"
               />
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="font-medium">{company.name}</p>
                 <p className="text-sm text-muted">{company.position}</p>
               </div>
+              <p className="w-full pl-[4.75rem] text-sm tabular-nums text-muted sm:ml-auto sm:w-auto sm:pl-0">
+                {company.period}
+              </p>
             </div>
-            <p className="text-sm tabular-nums text-muted">{company.period}</p>
           </li>
         ))}
       </ul>

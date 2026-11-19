@@ -25,11 +25,11 @@ export function About() {
               </a>
             </p>
           </div>
-          <div className="md:pt-1">
+          <div className="hidden md:block md:pt-1">
             <img
               src={meImage.src}
               srcSet={meImage.srcset}
-              sizes="(max-width: 768px) 70vw, 256px"
+              sizes="256px"
               width={meImage.width}
               height={meImage.height}
               alt="Dimitris Georgiadis"
