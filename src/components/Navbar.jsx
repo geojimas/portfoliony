@@ -88,10 +88,17 @@ export function Navbar() {
       <nav className="shell flex h-16 items-center justify-between" aria-label="Main">
         <a
           href="#home"
-          className="text-[15px] font-semibold tracking-tight"
+          aria-label="Dimitris Georgiadis, home"
+          className="inline-flex items-center"
           onClick={() => setActiveLink('#home')}
         >
-          Dimitris Georgiadis
+          <img
+            src="/favicon.svg"
+            alt=""
+            width="64"
+            height="64"
+            className="size-8 transition-opacity duration-200 hover:opacity-80"
+          />
         </a>
         <ul className="hidden items-center gap-7 md:flex">
           {links.map(menu => (
