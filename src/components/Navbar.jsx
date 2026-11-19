@@ -81,25 +81,11 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b bg-paper/90 backdrop-blur-sm transition-colors duration-200 ${
-        sticky ? 'border-line' : 'border-transparent'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-paper/90 backdrop-blur-sm transition-colors duration-200 ${sticky ? 'border-line' : 'border-transparent'
+        }`}
     >
       <nav className="shell flex h-16 items-center justify-between" aria-label="Main">
-        <a
-          href="#home"
-          aria-label="Dimitris Georgiadis, home"
-          className="inline-flex items-center"
-          onClick={() => setActiveLink('#home')}
-        >
-          <img
-            src="/favicon.svg"
-            alt=""
-            width="64"
-            height="64"
-            className="size-8 transition-opacity duration-200 hover:opacity-80"
-          />
-        </a>
+        <div className="text-[15px] font-semibold tracking-tight" />
         <ul className="hidden items-center gap-7 md:flex">
           {links.map(menu => (
             <li key={menu.id}>
@@ -107,11 +93,10 @@ export function Navbar() {
                 href={menu.link}
                 aria-current={activeLink === menu.link ? 'page' : undefined}
                 onClick={() => setActiveLink(menu.link)}
-                className={`text-sm transition-colors ${
-                  activeLink === menu.link
+                className={`text-sm transition-colors ${activeLink === menu.link
                     ? 'marker font-semibold text-ink'
                     : 'text-muted hover:text-sea'
-                }`}
+                  }`}
               >
                 {menu.name}
               </a>
@@ -144,11 +129,10 @@ export function Navbar() {
                     setActiveLink(menu.link)
                     closeMenu()
                   }}
-                  className={`flex items-center py-4 text-2xl font-semibold tracking-tight transition-colors ${
-                    activeLink === menu.link
+                  className={`flex items-center py-4 text-2xl font-semibold tracking-tight transition-colors ${activeLink === menu.link
                       ? 'marker text-ink'
                       : 'text-ink hover:text-sea'
-                  }`}
+                    }`}
                 >
                   {menu.name}
                 </a>
