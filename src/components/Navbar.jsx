@@ -1,131 +1,194 @@
-import { useEffect, useState } from 'react'
-import { MaterialSymbolsMenu } from '../components/techs/BurgerMenu'
+import { useEffect, useRef, useState } from 'react'
+import { MaterialSymbolsMenu } from './techs/BurgerMenu'
 import { CloseMenu } from './techs/CloseMenu'
+import { LogosGitlab } from './techs/Github'
+import { LogosLinkedinIcon } from './techs/Linkedin'
+
+const links = [
+  { id: 1, name: 'Home', link: '#home' },
+  { id: 2, name: 'About', link: '#about' },
+  { id: 3, name: 'Skills', link: '#skills' },
+  { id: 4, name: 'Work', link: '#projects' },
+  { id: 5, name: 'Contact', link: '#contact' },
+]
 
 export function Navbar() {
   const [sticky, setSticky] = useState(false)
   const [open, setOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
-
-  const menuLinks = [
-    { id: 1, name: 'HOME', link: '#home' },
-    { id: 2, name: 'ABOUT', link: '#about' },
-    { id: 3, name: 'SKILLS', link: '#skills' },
-    { id: 4, name: 'PROJECTS', link: '#projects' },
-    { id: 5, name: 'CONTACT', link: '#contact' },
-  ]
+  const menuRef = useRef(null)
+  const toggleRef = useRef(null)
 
   useEffect(() => {
-    const updateActiveLink = () => setActiveLink(window.location.hash || '#home')
-
-    updateActiveLink()
-    window.addEventListener('hashchange', updateActiveLink)
-
-    return () => {
-      window.removeEventListener('hashchange', updateActiveLink)
-    }
-  }, [])
-  useEffect(() => {
-    let isScrolling = false
+    let ticking = false
 
     function handleScroll() {
-      if (isScrolling)
+      if (ticking)
         return
-      isScrolling = true
+      ticking = true
 
       requestAnimationFrame(() => {
-        const shouldBeSticky = window.scrollY > 0
-        setSticky(shouldBeSticky)
-        isScrolling = false
+        setSticky(window.scrollY > 8)
+        ticking = false
       })
     }
 
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  useEffect(() => {
+    const sections = links
+      .map(link => document.getElementById(link.link.slice(1)))
+      .filter(Boolean)
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting)
+          setActiveLink(`#${entry.target.id}`)
+      })
+    }, { rootMargin: '-40% 0px -45% 0px' })
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!open)
+      return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        setOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+
+    function handleDesktop(event) {
+      if (event.matches)
+        setOpen(false)
+    }
+
+    const desktop = window.matchMedia('(min-width: 768px)')
+    desktop.addEventListener('change', handleDesktop)
+    window.addEventListener('keydown', handleKeyDown)
+    menuRef.current?.querySelector('a')?.focus()
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      desktop.removeEventListener('change', handleDesktop)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [open])
+
+  function isCurrent(link) {
+    return activeLink === link ? 'location' : undefined
+  }
+
   return (
-    <nav
-      className={`fixed w-full left-0 top-0 z-999 transition-colors duration-500 ease-in-out ${
-        sticky ? 'bg-white text-sky-950' : 'text-white'
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-paper/90 backdrop-blur-sm transition-colors duration-200 ${
+        sticky ? 'border-line' : 'border-transparent'
       }`}
     >
-      <div className="flex items-center justify-between">
-        <div className="mx-7">
-          <h4 className="text-4xl uppercase font-bold">
-            Dim
-            <span className="text-yellow-400">it</span>
-            ris
-          </h4>
-        </div>
-        <div
-          className={`lg:block hidden px-7 py-2 font-medium rounded-bl-full transition-colors duration-500 ease-in-out ${
-            sticky ? 'bg-white' : 'bg-white/80'
-          }`}
+      <nav className="shell flex h-16 items-center justify-end" aria-label="Main">
+        <ul className="hidden items-center gap-7 md:flex">
+          {links.map(menu => (
+            <li key={menu.id}>
+              <a
+                href={menu.link}
+                aria-current={isCurrent(menu.link)}
+                onClick={() => setActiveLink(menu.link)}
+                className={`text-sm transition-colors ${
+                  activeLink === menu.link
+                    ? 'marker font-semibold text-ink'
+                    : 'text-muted hover:text-sea'
+                }`}
+              >
+                {menu.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button
+          ref={toggleRef}
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-md border border-line text-xl text-ink transition-colors hover:border-sea/40 hover:text-sea md:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen(value => !value)}
         >
-          <ul className="flex items-center gap-1 py-2 text-lg font-bold text-sky-950">
-            {menuLinks?.map(menu => (
-              <li key={menu?.id}>
+          {open
+            ? <CloseMenu aria-hidden="true" />
+            : <MaterialSymbolsMenu color="currentColor" aria-hidden="true" />}
+        </button>
+      </nav>
+      {open && (
+        <div
+          ref={menuRef}
+          id="mobile-nav"
+          className="menu-in absolute inset-x-0 top-16 z-40 flex h-[calc(100dvh-4rem)] flex-col justify-between overflow-y-auto bg-paper px-5 pb-10 pt-4 md:hidden"
+        >
+          <ul className="divide-y divide-line">
+            {links.map(menu => (
+              <li key={menu.id}>
                 <a
-                  href={menu?.link}
-                  onClick={() => setActiveLink(menu?.link)}
-                  className={`block rounded-full px-5 py-2 ${
-                    activeLink === menu?.link
-                      ? 'bg-sky-950 text-white'
-                      : 'hover:bg-sky-200 hover:text-sky-950'
+                  href={menu.link}
+                  aria-current={isCurrent(menu.link)}
+                  onClick={() => {
+                    setActiveLink(menu.link)
+                    setOpen(false)
+                  }}
+                  className={`flex items-center py-4 text-2xl font-semibold tracking-tight transition-colors ${
+                    activeLink === menu.link
+                      ? 'marker text-ink'
+                      : 'text-ink hover:text-sea'
                   }`}
                 >
-                  {menu?.name}
+                  {menu.name}
                 </a>
               </li>
             ))}
           </ul>
-        </div>
-        <div
-          onClick={() => setOpen(!open)}
-          className={`z-999 text-3xl lg:hidden m-5 transition-colors duration-500 ${
-            open || sticky ? 'text-sky-950' : 'text-white'
-          }`}
-        >
-          <div
-            className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
-              open || sticky
-                ? 'border-sky-200 bg-white/90 text-sky-950 shadow-lg shadow-sky-100'
-                : 'border-white/40 bg-transparent text-white'
-            } cursor-pointer hover:scale-110 hover:shadow-xl transition-transform duration-300`}
-          >
-            {open ? <CloseMenu /> : <MaterialSymbolsMenu color={sticky ? 'black' : 'white'} />}
+          <div className="mt-12 space-y-5 text-sm">
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span className="rounded-[3px] bg-marker px-1.5 py-0.5 font-semibold text-ink">Available for work</span>
+              <span className="text-muted">Front-end developer in Greece</span>
+            </p>
+            <div className="flex items-center gap-6">
+              <a className="font-medium text-muted transition-colors hover:text-sea" href="mailto:georgiadis8636@gmail.com">
+                Email
+              </a>
+              <a
+                className="inline-flex items-center gap-1.5 font-medium text-muted transition-colors hover:text-sea"
+                href="https://github.com/geojimas"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LogosGitlab aria-hidden="true" className="size-4" />
+                GitHub
+              </a>
+              <a
+                className="inline-flex items-center gap-1.5 font-medium text-muted transition-colors hover:text-sea"
+                href="https://www.linkedin.com/in/dimitris-georgiadis-47b8b21aa/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LogosLinkedinIcon aria-hidden="true" className="size-4" />
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
-        <div
-          className={`lg:hidden absolute w-2/3 h-screen px-7 py-2 font-medium bg-slate-50/95 text-sky-950 top-0 border-l border-slate-200 shadow-2xl backdrop-blur-sm transition-all duration-300 ease-in-out ${
-            open ? 'right-0' : '-right-full'
-          }`}
-        >
-          <ul className="flex flex-col justify-center h-full gap-4 py-2 text-center text-xl font-bold">
-            {menuLinks?.map(menu => (
-              <li
-                onClick={() => setOpen(false)}
-                key={menu?.id}
-              >
-                <a
-                  href={menu?.link}
-                  onClick={() => setActiveLink(menu?.link)}
-                  className={`block rounded-xl px-5 py-3 ${
-                    activeLink === menu?.link
-                      ? 'bg-sky-950 text-white'
-                      : 'text-sky-950 hover:bg-sky-200 hover:text-sky-950'
-                  }`}
-                >
-                  {menu?.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </nav>
+      )}
+    </header>
   )
 }

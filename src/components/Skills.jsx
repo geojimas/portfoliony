@@ -1,76 +1,90 @@
-import { useEffect, useRef, useState } from 'react'
+import { LogosCodex } from './techs/Codex'
 import { LogosDocker } from './techs/Docker.jsx'
-// import { LogosNodejsIcon } from './techs/Node'
 import { LogosGitIcon } from './techs/Git'
 import { LogosJavascript } from './techs/Javascript'
+import { LogosNodejsIcon } from './techs/Node'
+import { LogosOpenCode } from './techs/OpenCode'
 import { LogosReact } from './techs/React'
 import { LogosTailwindcssIcon } from './techs/Tailwind'
 import { LogosTypescriptIcon } from './techs/TypeScript'
 import { LogosVitejs } from './techs/Vite.jsx'
 import { LogosVue } from './techs/Vue'
 
-const logos = [
-  { component: <LogosJavascript />, key: 'javascript' },
-  { component: <LogosTypescriptIcon />, key: 'typescript' },
-  { component: <LogosVue />, key: 'vue' },
-  { component: <LogosReact />, key: 'react' },
-  { component: <LogosTailwindcssIcon />, key: 'tailwind' },
-  { component: <LogosVitejs />, key: 'vite' },
-  { component: <LogosDocker />, key: 'docker' },
-  // { component: <LogosNodejsIcon />, key: 'nodejs' },
-  { component: <LogosGitIcon />, key: 'git' },
+const groups = [
+  {
+    id: 1,
+    title: 'Languages',
+    skills: [
+      { name: 'JavaScript', Icon: LogosJavascript },
+      { name: 'TypeScript', Icon: LogosTypescriptIcon },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Frameworks and runtime',
+    skills: [
+      { name: 'Vue', Icon: LogosVue },
+      { name: 'React', Icon: LogosReact },
+      { name: 'Node.js', Icon: LogosNodejsIcon },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Build and tools',
+    skills: [
+      { name: 'Vite', Icon: LogosVitejs },
+      { name: 'Tailwind CSS', Icon: LogosTailwindcssIcon },
+      { name: 'Docker', Icon: LogosDocker },
+      { name: 'Git', Icon: LogosGitIcon },
+    ],
+  },
+  {
+    id: 4,
+    title: 'AI tools',
+    skills: [
+      { name: 'Codex', Icon: LogosCodex },
+      { name: 'OpenCode', Icon: LogosOpenCode },
+    ],
+  },
 ]
 
 export function Skills() {
-  const skillsRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const section = skillsRef.current
-    if (!section)
-      return
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true)
-        observer.disconnect()
-      }
-    }, { threshold: 0.2 })
-
-    observer.observe(section)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="skills" className="py-4 pb-16 mb-10 bg-gray-800 rounded-3xl relative lg:mb-40">
-      <div className="mt-8 text-gray-100 text-center">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-yellow-400">
-          What I work with
+    <section id="skills" className="section">
+      <div className="shell">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Skills</h2>
+        <p className="mt-4 max-w-[54ch] text-muted">
+          The languages, frameworks, and tools I use day to day.
         </p>
-        <h3 id="skills-title" className="mb-6 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Skills
-        </h3>
-        <div
-          ref={skillsRef}
-          className="flex items-center justify-center mt-12 gap-10 flex-wrap"
-        >
-          {logos.map((logo, index) => (
-            <div
-              key={logo.key}
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transition: `opacity 700ms ease-out ${isVisible ? index * 80 : 0}ms, transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, border-color 350ms ease`,
-              }}
-              className="group relative min-w-40 max-w-[16rem] rounded-xl border border-yellow-600 bg-gray-900 p-10 hover:scale-105 hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/50"
-            >
-              <div className="w-18 h-16 flex items-center justify-center rounded-full">
-                <div className="text-6xl w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-                  {logo.component}
-                </div>
-              </div>
+        <dl className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          {groups.map(group => (
+            <div key={group.id}>
+              <dt className="text-sm font-semibold text-sea">{group.title}</dt>
+              <dd className="mt-3">
+                <ul className="flex flex-wrap items-center gap-4">
+                  {group.skills.map(({ name, Icon }) => (
+                    <li
+                      key={name}
+                      className="group/icon relative flex size-8 items-center justify-center"
+                    >
+                      <Icon
+                        aria-hidden="true"
+                        className="size-7 transition-transform duration-200 ease-out group-hover/icon:-translate-y-0.5 group-hover/icon:scale-105"
+                      />
+                      <span className="sr-only">{name}</span>
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded bg-ink px-1.5 py-0.5 text-[11px] font-medium leading-4 text-paper opacity-0 transition duration-150 group-hover/icon:translate-y-0 group-hover/icon:opacity-100"
+                      >
+                        {name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   )
