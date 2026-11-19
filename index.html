@@ -21,16 +21,16 @@
     <link rel="canonical" href="https://geord.netlify.app" />
     <meta name="robots" content="index, follow" />
     <title>Dimitris Georgiadis | Front-End Developer</title>
-    <!-- Typeface: Archivo, one family with a wide weight range -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Typeface: Archivo, self-hosted to keep the font off the critical third-party chain -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/src/assets/fonts/archivo-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <meta name="theme-color" content="#ebe8de" />
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VKP5Z26H1K"></script>
+    <!-- Google Analytics: loaded once the page is idle -->
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -39,6 +39,18 @@
       gtag('js', new Date())
 
       gtag('config', 'G-VKP5Z26H1K')
+
+      function loadAnalytics() {
+        const script = document.createElement('script')
+        script.async = true
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VKP5Z26H1K'
+        document.head.appendChild(script)
+      }
+
+      if ('requestIdleCallback' in window)
+        requestIdleCallback(loadAnalytics, { timeout: 4000 })
+      else
+        window.addEventListener('load', loadAnalytics)
     </script>
   </head>
 

@@ -1,5 +1,5 @@
-import arxnetLogo from '../assets/arxnet.png'
-import lancomLogo from '../assets/lancom.png'
+import arxnetLogo from '../assets/arxnet.png?w=160&format=webp'
+import lancomLogo from '../assets/lancom.png?w=160&format=webp'
 
 const careerStart = { year: 2021, month: 2 } // March 2021
 
