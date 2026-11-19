@@ -11,7 +11,7 @@ export function Hero() {
             <span className="block">Georgiadis</span>
           </h1>
           <p className="mt-6 max-w-[46ch] text-pretty text-lg leading-[1.6] text-muted md:text-xl">
-            Front-end developer in Greece. I build interfaces with Vue and TypeScript that stay fast and easy to maintain.
+            Front-end developer in Greece. I build interfaces that stay fast and easy to maintain.
           </p>
           <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
             <span className="rounded-[3px] bg-marker px-1.5 py-0.5 font-semibold text-ink">Available for work</span>
