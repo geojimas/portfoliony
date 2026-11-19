@@ -1,15 +1,15 @@
-import project4 from '../assets/auth.png?w=600&h=300&format=webp&as=metadata'
-import project6 from '../assets/coupons.png?w=600&h=300&format=webp&as=metadata'
-import project5 from '../assets/lmn.png?w=600&h=300&format=webp&as=metadata'
-import project3 from '../assets/realt.png?w=600&h=300&format=webp&as=metadata'
-import project2 from '../assets/rec.png?w=600&h=300&format=webp&as=metadata'
-import project7 from '../assets/vibeVue.png?w=600&h=300&format=webp&as=metadata'
+import project1 from '../assets/vibeVue.png?w=600&h=300&format=webp&as=metadata'
+import project2 from '../assets/auth.png?w=600&h=300&format=webp&as=metadata'
+import project3 from '../assets/coupons.png?w=600&h=300&format=webp&as=metadata'
+import project4 from '../assets/rec.png?w=600&h=300&format=webp&as=metadata'
+import project5 from '../assets/realt.png?w=600&h=300&format=webp&as=metadata'
+import project6 from '../assets/lmn.png?w=600&h=300&format=webp&as=metadata'
 
 export function Project() {
   const projects = [
     {
       id: 1,
-      img: project7,
+      img: project1,
       name: 'VibeVue starter',
       stars: 18,
       github_link: 'https://github.com/geojimas/VibeVue',
@@ -17,35 +17,36 @@ export function Project() {
     },
     {
       id: 2,
-      img: project6,
+      img: project2,
+      name: 'JWT authentication',
+      stars: 20,
+      github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
+      live_link: 'https://authentication-system-yopy.onrender.com',
+    },
+    {
+      id: 3,
+      img: project3,
       name: 'Job coupons',
       github_link: 'https://github.com/geojimas/job-coupons',
       live_link: 'https://job-coupons.netlify.app',
     },
     {
-      id: 3,
-      img: project2,
+      id: 4,
+      img: project4,
       name: 'Recipes',
       github_link: 'https://github.com/geojimas/recipes-app',
       live_link: 'https://recipesq.netlify.app',
     },
     {
-      id: 4,
-      img: project4,
-      name: 'JWT authentication',
-      github_link: 'https://github.com/geojimas/jwt-auth-vue-typescript',
-      live_link: 'https://authentication-system-yopy.onrender.com',
-    },
-    {
       id: 5,
-      img: project3,
+      img: project5,
       name: 'Real-time bitcoin prices',
       github_link: 'https://github.com/geojimas/real-time-data-api',
       live_link: 'https://real-time-data-api.onrender.com',
     },
     {
       id: 6,
-      img: project5,
+      img: project6,
       name: 'Stories REST API',
       github_link: 'https://github.com/geojimas/stories-REST-API',
     },
