@@ -1,6 +1,6 @@
 export function Contact() {
   return (
-    <section id="contact" className="section bg-sand">
+    <section id="contact" className="section bg-haze">
       <div className="shell">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Contact</h2>
         <p className="mt-4 max-w-[50ch] text-muted">
