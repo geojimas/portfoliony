@@ -1,4 +1,4 @@
-import { LogosCodex } from './techs/Codex'
+import { LogosCopilot } from './techs/Copilot'
 import { LogosDocker } from './techs/Docker.jsx'
 import { LogosGitIcon } from './techs/Git'
 import { LogosJavascript } from './techs/Javascript'
@@ -42,7 +42,7 @@ const groups = [
     id: 4,
     title: 'AI tools',
     skills: [
-      { name: 'Codex', Icon: LogosCodex },
+      { name: 'Copilot', Icon: LogosCopilot },
       { name: 'OpenCode', Icon: LogosOpenCode },
     ],
   },
