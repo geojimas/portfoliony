@@ -18,9 +18,48 @@ export function Navbar() {
   const [activeLink, setActiveLink] = useState('#home')
   const menuRef = useRef(null)
   const toggleRef = useRef(null)
+  const scrollLockRef = useRef(0)
+
+  function goTo(link) {
+    // Keep the clicked link highlighted until its smooth scroll settles.
+    scrollLockRef.current = performance.now() + 900
+    setActiveLink(link)
+    setOpen(false)
+  }
 
   useEffect(() => {
+    const sections = links
+      .map(link => ({ link: link.link, element: document.getElementById(link.link.slice(1)) }))
+      .filter(section => section.element)
+
     let ticking = false
+
+    function update() {
+      // A section counts as current once its top passes this line.
+      const marker = window.innerHeight * 0.4
+      let current = sections[0]?.link ?? '#home'
+
+      for (const section of sections) {
+        if (section.element.getBoundingClientRect().top <= marker)
+          current = section.link
+        else
+          break
+      }
+
+      // Short final sections never reach the line, so settle on the last one at the bottom.
+      const atBottom
+        = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2
+
+      if (atBottom && sections.length)
+        current = sections[sections.length - 1].link
+
+      setSticky(window.scrollY > 8)
+
+      if (performance.now() < scrollLockRef.current)
+        return
+
+      setActiveLink(current)
+    }
 
     function handleScroll() {
       if (ticking)
@@ -28,33 +67,26 @@ export function Navbar() {
       ticking = true
 
       requestAnimationFrame(() => {
-        setSticky(window.scrollY > 8)
+        update()
         ticking = false
       })
     }
 
+    function handleScrollEnd() {
+      scrollLockRef.current = 0
+      handleScroll()
+    }
+
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+    window.addEventListener('scrollend', handleScrollEnd)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+      window.removeEventListener('scrollend', handleScrollEnd)
     }
-  }, [])
-
-  useEffect(() => {
-    const sections = links
-      .map(link => document.getElementById(link.link.slice(1)))
-      .filter(Boolean)
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting)
-          setActiveLink(`#${entry.target.id}`)
-      })
-    }, { rootMargin: '-40% 0px -45% 0px' })
-
-    sections.forEach(section => observer.observe(section))
-    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -105,7 +137,7 @@ export function Navbar() {
               <a
                 href={menu.link}
                 aria-current={isCurrent(menu.link)}
-                onClick={() => setActiveLink(menu.link)}
+                onClick={() => goTo(menu.link)}
                 className={`text-sm transition-colors ${
                   activeLink === menu.link
                     ? 'marker font-semibold text-ink'
@@ -143,10 +175,7 @@ export function Navbar() {
                 <a
                   href={menu.link}
                   aria-current={isCurrent(menu.link)}
-                  onClick={() => {
-                    setActiveLink(menu.link)
-                    setOpen(false)
-                  }}
+                  onClick={() => goTo(menu.link)}
                   className={`flex items-center py-4 text-2xl font-semibold tracking-tight transition-colors ${
                     activeLink === menu.link
                       ? 'marker text-ink'
