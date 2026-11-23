@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { MaterialSymbolsMenu } from './techs/BurgerMenu'
 import { CloseMenu } from './techs/CloseMenu'
+import { LogosMail } from './techs/Mail'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 
@@ -193,7 +194,11 @@ export function Navbar() {
               <span className="text-muted">Front-end developer in Greece</span>
             </p>
             <div className="flex items-center gap-6">
-              <a className="font-medium text-muted transition-colors hover:text-sea" href="mailto:georgiadis8636@gmail.com">
+              <a
+                className="inline-flex items-center gap-1.5 font-medium text-muted transition-colors hover:text-sea"
+                href="mailto:georgiadis8636@gmail.com"
+              >
+                <LogosMail aria-hidden="true" className="size-4" />
                 Email
               </a>
               <a

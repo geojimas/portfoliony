@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { LogosMail } from './techs/Mail'
 import { LogosGitlab } from './techs/Github'
 import { LogosLinkedinIcon } from './techs/Linkedin'
 
@@ -11,9 +12,10 @@ export function Footer() {
         <p>© {year} Dimitris Georgiadis</p>
         <div className="flex items-center gap-5">
           <a
-            className="transition-colors hover:text-sea"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-sea"
             href="mailto:georgiadis8636@gmail.com"
           >
+            <LogosMail aria-hidden="true" className="size-4" />
             Email
           </a>
           <a
